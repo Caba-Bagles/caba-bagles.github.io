@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Aguja y el Tornillo · Ferretería y mercería en Lavapiés</title>
+    <title>Caba</title>
 
-    <!-- Tipografías -->
+    <!-- Tipografía serif clásica de la web de Caba -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
 
@@ -25,47 +25,43 @@
 
         @theme static {
             /* Colores del modo claro. Los del modo oscuro están en css/styles.css */
-            --color-fondo: #f4ecdc;
-            --color-superficie: #fffaf0;
-            --color-texto: #2a1a10;
-            --color-suave: #6e5236;
-            --color-acento: #93362a;
-            --color-borde: #d9c7a3;
+            --color-fondo: #f5ece9;
+            --color-superficie: #4a1d1e;
+            --color-texto: #4a1d1e;
+            --color-suave: #7d504f;
+            --color-acento: #4a1d1e;
+            --color-borde: #d8c3bd;
+            --color-texto-claro: #fdefe9;
 
-            --font-rotulo: "Fraunces", Georgia, serif;
+            --font-rotulo: "Playfair Display", Georgia, serif;
             --font-texto: "Work Sans", system-ui, sans-serif;
+            --font-menu: "Iosevka Charon Mono", monospace;
         }
     </style>
 </head>
 <body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500">
 
     <!-- ================= CABECERA ================= -->
-    <header class="sticky top-0 z-20 border-b border-borde bg-fondo/95 backdrop-blur">
-        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
-            <a href="#inicio" class="font-rotulo text-xl leading-tight font-bold md:text-2xl">
-                La Aguja <span class="text-acento">&amp;</span><br class="md:hidden"> el Tornillo
+    <header class="sticky top-0 z-20 border-b border-borde/40 bg-fondo/95 backdrop-blur">
+        <div class="mx-auto flex max-w-7x2 items-center justify-between px-11 py-4">
+            <a href="#inicio" class="font-rotulo text-3xl font-bold tracking-tight text-superficie lowercase">
+                caba
             </a>
 
-            <div class="flex items-center gap-2 md:order-last">
-                <!-- Persona A: este botón cambia entre modo claro y oscuro -->
-                <button id="boton-tema" type="button" aria-pressed="false"
-                        class="rounded-full border border-borde px-3 py-2 text-sm md:px-4 font-semibold hover:border-acento hover:text-acento">
-                    Modo oscuro
-                </button>
-
+            <div class="flex items-center gap-3 md:order-last">
                 <!-- Persona A: este botón abre y cierra el menú en móvil -->
                 <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
-                        class="rounded-full bg-acento px-3 py-2 text-sm font-semibold text-fondo md:hidden">
-                    Menú
+                        class="font-menu rounded-full bg-superficie px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-texto-claro md:hidden">
+                    MENÚ
                 </button>
             </div>
 
             <nav class="w-full md:ml-auto md:w-auto" aria-label="Principal">
-                <ul id="menu" class="hidden space-y-1 pb-2 md:flex md:gap-8 md:space-y-0 md:pb-0">
-                    <li><a href="#inicio" class="enlace-menu block py-2">Inicio</a></li>
-                    <li><a href="#productos" class="enlace-menu block py-2">Productos</a></li>
-                    <li><a href="#preguntas" class="enlace-menu block py-2">Preguntas</a></li>
-                    <li><a href="#visitanos" class="enlace-menu block py-2">Visítanos</a></li>
+                <ul id="menu" class="hidden space-y-2 pb-2 md:flex md:gap-8 md:space-y-0 md:pb-0">
+                    <li><a href="#inicio" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">BAGLES</a></li>
+                    <li><a href="#productos" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">NOSOTROS</a></li>
+                    <li><a href="#preguntas" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">ENCUENTRANOS</a></li>
+                    <li><a href="#visitanos" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
