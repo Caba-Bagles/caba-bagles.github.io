@@ -75,28 +75,30 @@
 <main>
 
     <!-- Portada -->
-    <section id="inicio" class="relative w-full bg-[#501a1a] h-[calc(100vh-4rem)] flex items-center justify-center overflow-visible">
-        <div class="relative w-full h-full max-w-5xl px-4 py-0 flex items-center justify-center">
-            <div class="absolute top-[40px] left-[12px] md:top-[90px] md:left-[-5px] max-w-[280px] sm:max-w-[340px] z-30 pointer-events-none">
-                <p class="font-menu text-[15px] sm:text-[18px] leading-relaxed tracking-wide font-medium text-[#f2e4dc] whitespace-pre-line drop-shadow-md">
-                Cada mañana preparamos
-                bagels artesanos desde
-                cero: masa natural,
-                hervidos y horneados al
-                momento, listos para
-                rellenar a tu gusto.
+    <section id="inicio" class="relative w-full bg-[#501a1a] min-h-[calc(100vh-4rem)] flex flex-col md:flex-row items-center justify-center pt-6 pb-12 md:py-0 overflow-visible">
+        
+        <div class="relative w-full h-full max-w-5xl px-4 flex flex-col md:flex-row items-center justify-center">
+            
+
+            <div class="w-full px-2 mb-6 md:mb-0 md:absolute md:top-[125px] md:left-[-20px] md:max-w-[340px] z-30">
+                <p class="font-menu text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed tracking-wide font-medium text-[#f2e4dc] whitespace-pre-line drop-shadow-md">
+                    Cada mañana preparamos
+                    bagels artesanos desde
+                    cero: masa natural,
+                    hervidos y horneados al
+                    momento, listos para
+                    rellenar a tu gusto.
                 </p>
             </div>
 
+            <!-- Marco de la foto -->
             <div id="contenedor-hero-img" class="relative w-full h-full overflow-hidden flex items-center justify-center">
-            
-                <img src="img/panadero.webp" alt="Obrador de Caba" class="w-full h-full object-contain object-center pointer-events-none block" />
+                
+                <img src="img/panadero.webp" alt="Obrador de Caba" class="w-full h-auto md:h-full object-contain object-center pointer-events-none block max-h-[70vh] md:max-h-none" />
 
-                <!-- Círculo caba en la esquina inferior derecha -->
-                <div id="badge-caba" title="Arrastrar" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-[#f2e4dc] p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform z-20">
-    
+                <!-- Logo flotante -->
+                <div id="badge-caba" title="Arrastrar" class="absolute bottom-2 right-2 sm:bottom-6 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-[#f2e4dc] p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform z-20">
                     <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none" />
-
                 </div>
 
             </div>
