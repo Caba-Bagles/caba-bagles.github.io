@@ -3,139 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caba</title>
+    <title>Caba - Bagles Artesanales</title>
 
     <!-- Tipografía serif clásica de la web de Caba -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-    <!-- ===== CSS DE LIBRERÍAS (Persona B los añade aquí) ===== -->
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-    <!-- Nuestro CSS propio -->
-    <link rel="stylesheet" href="css/styles.css">
+        <!-- Nuestro CSS propio -->
+        <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Tailwind desde el CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- Tailwind desde el CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Sistema de diseño -->
     <style type="text/tailwindcss">
-        /* Modo oscuro con la clase .dark en <html> (la pone el JavaScript) */
+    /* Modo oscuro con la clase .dark en <html> (la pone el JavaScript) */
         @custom-variant dark (&:where(.dark, .dark *));
 
         @theme static {
-            /* Colores del modo claro. Los del modo oscuro están en css/styles.css */
-            --color-fondo: #f5ece9;
-            --color-superficie: #4a1d1e;
-            --color-texto: #4a1d1e;
-            --color-suave: #7d504f;
-            --color-acento: #4a1d1e;
-            --color-borde: #d8c3bd;
-            --color-texto-claro: #fdefe9;
+        /* Paleta exacta de Caba */
+        --color-caba-marron: #501a1a;
+        --color-caba-rosa: #f2e4dc;
+        --color-fondo: #f2e4dc;
+        --color-superficie: #501a1a;
+        --color-texto: #501a1a;
+        --color-suave: #7d504f;
+        --color-acento: #501a1a;
+        --color-borde: #d8c3bd;
+        --color-texto-claro: #f2e4dc;
 
-            --font-rotulo: "Playfair Display", Georgia, serif;
-            --font-texto: "Work Sans", system-ui, sans-serif;
-            --font-menu: "Iosevka Charon Mono", monospace;
+        --font-texto: "Iosevka Charon Mono", monospace;
+        --font-menu: "Iosevka Charon Mono", monospace;
         }
     </style>
 </head>
-<body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500">
+<body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 selection:bg-[#501a1a] selection:text-[#f2e4dc]">
 
-    <!-- ================= CABECERA ================= -->
-    <header class="sticky top-0 z-20 border-b border-borde/40 bg-fondo/95 backdrop-blur">
-        <div class="mx-auto flex max-w-7x2 items-center justify-between px-11 py-4">
-            <a href="#inicio" class="font-rotulo text-3xl font-bold tracking-tight text-superficie lowercase">
-                caba
-            </a>
+    <!-- Cabecera -->
+<header class="sticky top-0 z-50 border-b border-[#501a1a]/20 bg-[#f2e4dc]/95 backdrop-blur-md">
+    <!-- Se ajusta px-6 md:px-12 para tener exactamente la misma sangría a ambos lados -->
+    <div class="flex w-full items-center justify-between px-6 py-4 md:px-12">
+        
+        <!-- Logo -->
+        <a href="#inicio" class="block py-1 hover:opacity-80 transition-opacity">
+            <img src="img/logocaba.webp" alt="Logo Caba" class="h-8 md:h-11 w-auto object-contain" />
+        </a>
 
-            <div class="flex items-center gap-3 md:order-last">
-                <!-- Persona A: este botón abre y cierra el menú en móvil -->
-                <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
-                        class="font-menu rounded-full bg-superficie px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-texto-claro md:hidden">
-                    MENÚ
-                </button>
+        <!-- Botón Menú Móvil -->
+        <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
+                class="font-menu rounded-full bg-[#501a1a] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#f2e4dc] md:hidden hover:opacity-90 transition">
+            MENÚ
+        </button>
+
+        <!-- Navegación con tipografía más grande y espaciado proporcional -->
+        <nav class="w-full md:w-auto" aria-label="Navegación principal">
+            <ul id="menu" class="hidden flex-col space-y-4 pt-4 md:flex md:flex-row md:gap-10 md:space-y-0 md:pt-0 md:items-center">
+                <li><a href="#bagels" class="enlace-menu font-menu block text-base md:text-lg font-extrabold uppercase tracking-wider text-[#501a1a]">BAGELS</a></li>
+                <li><a href="#rellenos" class="enlace-menu font-menu block text-base md:text-lg font-extrabold uppercase tracking-wider text-[#501a1a]">RELLENOS</a></li>
+                <li><a href="#nosotros" class="enlace-menu font-menu block text-base md:text-lg font-extrabold uppercase tracking-wider text-[#501a1a]">NOSOTROS</a></li>
+                <li><a href="#contacto" class="enlace-menu font-menu block text-base md:text-lg font-extrabold uppercase tracking-wider text-[#501a1a]">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- Portada -->
+    <section id="inicio" class="relative w-full bg-[#501a1a] h-[calc(100vh-4rem)] flex items-center justify-center overflow-visible">
+        <div class="relative w-full h-full max-w-5xl px-4 py-0 flex items-center justify-center">
+            <div class="absolute top-[40px] left-[12px] md:top-[90px] md:left-[-5px] max-w-[280px] sm:max-w-[340px] z-30 pointer-events-none">
+                <p class="font-menu text-[15px] sm:text-[18px] leading-relaxed tracking-wide font-medium text-[#f2e4dc] whitespace-pre-line drop-shadow-md">
+                Cada mañana preparamos
+                bagels artesanos desde
+                cero: masa natural,
+                hervidos y horneados al
+                momento, listos para
+                rellenar a tu gusto.
+                </p>
             </div>
 
-            <nav class="w-full md:ml-auto md:w-auto" aria-label="Principal">
-                <ul id="menu" class="hidden space-y-2 pb-2 md:flex md:gap-8 md:space-y-0 md:pb-0">
-                    <li><a href="#inicio" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">BAGLES</a></li>
-                    <li><a href="#productos" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">NOSOTROS</a></li>
-                    <li><a href="#preguntas" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">ENCUENTRANOS</a></li>
-                    <li><a href="#visitanos" class="enlace-menu font-menu block py-1 text-xs font-bold uppercase tracking-widest">CONTACTO</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            <div id="contenedor-hero-img" class="relative w-full h-full overflow-hidden flex items-center justify-center">
+            
+                <img src="img/panadero.webp" alt="Obrador de Caba" class="w-full h-full object-contain object-center pointer-events-none block" />
 
-    <main>
-        <!-- ================= PORTADA ================= -->
-        <section id="inicio" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-suave">Ferretería y mercería · Lavapiés · Desde 1962</p>
-            <h1 class="mt-5 max-w-3xl font-rotulo text-5xl leading-tight font-bold md:text-7xl">
-                Si no lo tenemos, <span class="text-acento italic">se lo pedimos.</span>
-            </h1>
-            <p class="mt-6 max-w-xl text-lg text-suave">
-                Tornillos sueltos, botones de nácar, hilo de todos los colores y consejo de toda la vida. Tres generaciones detrás del mismo mostrador.
-            </p>
-            <a href="#productos" class="mt-10 inline-block rounded-full bg-acento px-8 py-3 font-semibold text-fondo hover:opacity-90">
-                Ver lo más pedido
-            </a>
-        </section>
-
-        <!-- ================= PRODUCTOS ================= -->
-        <section id="productos" class="border-y border-borde bg-superficie py-20">
-            <div class="mx-auto max-w-6xl px-5">
-                <h2 class="titulo-seccion font-rotulo text-4xl font-bold">Lo más pedido</h2>
-                <p class="mt-3 text-suave">Precios del mostrador, IVA incluido.</p>
-
-                <!-- Persona B: convertir esta rejilla en un slider con Swiper -->
-                <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-                    <article class="producto rounded-2xl border border-borde bg-fondo p-6">
-                        <p class="etiqueta">N.º 01</p>
-                        <h3 class="mt-4 font-rotulo text-2xl font-bold">Hilo de algodón</h3>
-                        <p class="mt-2 text-suave">Bobina de 500 m. Más de 80 colores en el expositor.</p>
-                        <p class="mt-6 font-rotulo text-3xl font-bold text-acento">1,80 €</p>
-                    </article>
-
-                    <article class="producto rounded-2xl border border-borde bg-fondo p-6">
-                        <p class="etiqueta">N.º 02</p>
-                        <h3 class="mt-4 font-rotulo text-2xl font-bold">Botones de nácar</h3>
-                        <p class="mt-2 text-suave">La docena. Cuatro agujeros, de 11 a 20 mm.</p>
-                        <p class="mt-6 font-rotulo text-3xl font-bold text-acento">4,50 €</p>
-                    </article>
-
-                    <article class="producto rounded-2xl border border-borde bg-fondo p-6">
-                        <p class="etiqueta">N.º 03</p>
-                        <h3 class="mt-4 font-rotulo text-2xl font-bold">Cinta métrica</h3>
-                        <p class="mt-2 text-suave">De modista, 150 cm, con remates metálicos.</p>
-                        <p class="mt-6 font-rotulo text-3xl font-bold text-acento">2,95 €</p>
-                    </article>
-
-                    <article class="producto rounded-2xl border border-borde bg-fondo p-6">
-                        <p class="etiqueta">N.º 04</p>
-                        <h3 class="mt-4 font-rotulo text-2xl font-bold">Tornillos para madera</h3>
-                        <p class="mt-2 text-suave">Caja de 100, cabeza plana. También sueltos.</p>
-                        <p class="mt-6 font-rotulo text-3xl font-bold text-acento">3,20 €</p>
-                    </article>
-
-                    <article class="producto rounded-2xl border border-borde bg-fondo p-6">
-                        <p class="etiqueta">N.º 05</p>
-                        <h3 class="mt-4 font-rotulo text-2xl font-bold">Martillo de carpintero</h3>
-                        <p class="mt-2 text-suave">Mango de fresno y orejas para sacar clavos.</p>
-                        <p class="mt-6 font-rotulo text-3xl font-bold text-acento">12,90 €</p>
-                    </article>
-
-                    <article class="producto rounded-2xl border border-borde bg-fondo p-6">
-                        <p class="etiqueta">N.º 06</p>
-                        <h3 class="mt-4 font-rotulo text-2xl font-bold">Bombilla de filamento</h3>
-                        <p class="mt-2 text-suave">Rosca gorda E27, luz cálida de las de antes.</p>
-                        <p class="mt-6 font-rotulo text-3xl font-bold text-acento">6,50 €</p>
-                    </article>
+                <!-- Círculo caba en la esquina inferior derecha -->
+                <div id="badge-caba" title="Arrastrar" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-[#f2e4dc] p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform z-20">
+    
+                    <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none" />
 
                 </div>
+
             </div>
-        </section>
+
+        </div>
+    </section>
+
+    <!-- Carrusel -->
+    <div class="overflow-hidden bg-[#f2e4dc] py-3 text-[#501a1a] font-menu font-bold tracking-widest text-xs uppercase border-y border-[#501a1a]/20">
+        <div class="animate-marquee whitespace-nowrap flex gap-8">
+            <span>100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+            <span>100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+            <span>100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+        </div>
+    </div>
+
+    <!-- Bagels -->
+    <section id="bagels" class="py-20 bg-caba-rosa text-caba-marron">
+        <div class="mx-auto max-w-6xl px-6">
+            <h2 class="text-center font-menu text-sm uppercase tracking-[0.3em] font-bold mb-12" data-aos="fade-up">
+                TIPOS DE BAGELS
+            </h2>
+        </div>
+
+    </section>
 
         <!-- ================= PREGUNTAS FRECUENTES ================= -->
         <!-- Reto extra (en casa): convertir en acordeón con jQuery -->
@@ -178,8 +164,6 @@
     <footer class="py-8 text-center text-sm text-suave">
         La Aguja y el Tornillo · Desde 1962 · Práctica de clase, MWHE
     </footer>
-
-    <!-- ===== JS DE LIBRERÍAS (Persona B los añade aquí, ANTES de nuestro JS) ===== -->
 
     <!-- ===== NUESTRO JAVASCRIPT ===== -->
     <script src="js/interfaz.js"></script>
