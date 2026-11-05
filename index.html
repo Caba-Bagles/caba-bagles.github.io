@@ -212,8 +212,7 @@
     </section>
 
     <!-- ==================== NOSOTROS ==================== -->
-     <!-- ==================== SECCIÓN NOSOTROS ==================== -->
-<!-- ==================== SECCIÓN NOSOTROS ==================== -->
+
 <section id="nosotros" class="py-16 md:py-24 max-w-6xl mx-auto px-6 font-texto text-texto">
   <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-[#501a1a] font-bold mb-12">
     Nosotros
@@ -233,19 +232,28 @@
 
     <!-- Caja del texto -->
     <div class="w-full sm:w-[58%] flex flex-col space-y-4 text-left">
-      <h3 class="font-rotulo text-lg md:text-xl font-bold tracking-tight text-texto">
-        Bagels hechos a mano, con ingredientes naturales
-      </h3>
-      <p class="text-sm md:text-base leading-relaxed opacity-90">
-        Todo empezó con una idea sencilla: hacer bagels de verdad. De los que se amasan a mano, fermentan con calma y se hierven antes de entrar al horno, como se han hecho siempre.
-      </p>
-      <p class="text-sm md:text-base leading-relaxed opacity-90">
-        Por eso nuestra masa lleva pocos ingredientes y todos naturales: harina, agua, sal y levadura. Sin aditivos, sin conservantes y sin masas industriales. Cada día elaboramos pequeñas tandas para que lleguen a tu mesa recién horneados, con esa corteza dorada y ese interior tierno que los hace inconfundibles.
-      </p>
-      <p class="text-sm md:text-base leading-relaxed opacity-90">
-        Con los rellenos seguimos la misma filosofía: producto fresco, de temporada y bien combinado. Pocas opciones, pero pensadas y cuidadas hasta el último detalle. Creemos que lo natural y lo hecho a mano se nota en cada bocado. Y que cuando se trabaja sin prisas, el resultado habla por sí solo.
-      </p>
-    </div>
+  
+  <!-- Subtítulo -->
+  <h3 class="font-rotulo text-lg md:text-xl font-bold tracking-tight text-texto" data-aos="fade-up" data-aos-delay="100">
+    Bagels hechos a mano, con ingredientes naturales
+  </h3>
+  
+  <!-- Párrafo 1 -->
+  <p class="text-sm md:text-base leading-relaxed opacity-90" data-aos="fade-up" data-aos-delay="200">
+    Todo empezó con una idea sencilla: hacer bagels de verdad. De los que se amasan a mano, fermentan con calma y se hierven antes de entrar al horno, como se han hecho siempre.
+  </p>
+
+  <!-- Párrafo 2 -->
+  <p class="text-sm md:text-base leading-relaxed opacity-90" data-aos="fade-up" data-aos-delay="300">
+    Por eso nuestra masa lleva pocos ingredientes y todos naturales: harina, agua, sal y levadura. Sin aditivos, sin conservantes y sin masas industriales. Cada día elaboramos pequeñas tandas para que lleguen a tu mesa recién horneados, con esa corteza dorada y ese interior tierno que los hace inconfundibles.
+  </p>
+
+  <!-- Párrafo 3 -->
+  <p class="text-sm md:text-base leading-relaxed opacity-90" data-aos="fade-up" data-aos-delay="400">
+    Con los rellenos seguimos la misma filosofía: producto fresco, de temporada y bien combinado. Pocas opciones, pero pensadas y cuidadas hasta el último detalle. Creemos que lo natural y lo hecho a mano se nota en cada bocado. Y que cuando se trabaja sin prisas, el resultado habla por sí solo.
+  </p>
+
+</div>
 
   </div>
 </section>
@@ -416,6 +424,22 @@
     });
   });
   </script>
+
+  <!-- AOS CSS (puedes ponerlo en el <head> o aquí abajo antes de los scripts) -->
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+ <!-- AOS JS -->
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+ <!-- Inicialización de AOS -->
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 800, 
+      once: true     
+    });
+  });
+</script>
 
 </body>
 </html>
