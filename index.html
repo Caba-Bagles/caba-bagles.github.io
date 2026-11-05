@@ -48,6 +48,7 @@
         }
     </style>
 </head>
+
 <body class="bg-fondo font-texto text-texto antialiased transition-colors duration-500 selection:bg-[#501a1a] selection:text-[#f2e4dc]">
 
     <!-- Cabecera -->
@@ -84,90 +85,111 @@
 <main>
 
     <!-- Portada -->
-    <section id="inicio" class="relative w-full bg-[#501a1a] p-0 flex flex-col md:flex-row items-center justify-center overflow-visible">
+  <section id="inicio" class="relative w-full bg-[#501a1a] p-0 flex flex-col md:flex-row items-center justify-center overflow-visible">
         
-        <div class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center">
-            
-
-            <div class="w-full px-6 pt-6 pb-4 mt-6 mb-6 md:pt-0 md:pb-0 md:absolute md:top-[80px] md:left-[-20px] md:max-w-[320px] z-30">
-                <p class="font-menu text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed tracking-wide font-medium text-[#f2e4dc] whitespace-pre-line drop-shadow-md">
+    <div class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center">
+      <div class="w-full px-6 pt-6 pb-4 mt-6 mb-6 md:pt-0 md:pb-0 md:absolute md:top-[80px] md:left-[-20px] md:max-w-[320px] z-30">
+        <p class="font-menu text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed tracking-wide font-medium text-[#f2e4dc] whitespace-pre-line drop-shadow-md">
                     Cada mañana preparamos
                     bagels artesanos desde
                     cero: masa natural,
                     hervidos y horneados al
                     momento, listos para
                     rellenar a tu gusto.
-                </p>
+        </p>
+      </div>
+
+      <!-- Marco de la foto -->
+      <div id="contenedor-hero-img" class="relative w-full overflow-hidden flex items-center leading-none justify-center">
+        <img src="img/panaderoinicio.webp" alt="Obrador de Caba" class="scale-[1.01] w-full h-auto md:h-full object-cover object-center pointer-events-none block" />
+
+      <!-- Logo flotante -->
+      <div id="badge-caba" title="Arrastrar" class="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-[#f2e4dc] p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform -rotate-12 z-20 touch-none">
+        <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none" />
+      </div>
+
             </div>
 
-            <!-- Marco de la foto -->
-            <div id="contenedor-hero-img" class="relative w-full overflow-hidden flex items-center leading-none justify-center">
-                
-                <img src="img/panaderoinicio.webp" alt="Obrador de Caba" class="scale-[1.01] w-full h-auto md:h-full object-cover object-center pointer-events-none block" />
+    </div>
+  </section>
 
-                <!-- Logo flotante -->
-                <div id="badge-caba" title="Arrastrar" class="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-[#f2e4dc] p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform z-20">
-                    <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none" />
-                </div>
+  <!-- Carrusel -->
+  <div class="w-full overflow-hidden bg-[#f2e4dc] py-3 text-[#501a1a] border-y border-[#501a1a]/20">
+    <div class="animate-marquee whitespace-nowrap font-didot text-lg sm:text-2xl tracking-[0.2em] uppercase flex">
+      <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+      <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+      <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+    </div>
+  </div>
 
+  <!-- Bagels -->
+  <section id="bagels" class="w-full py-16 px-6 md:px-12 bg-[#f2e4dc] border-b border-[#501a1a]/10">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-center font-menu text-xl sm:text-2x1 uppercase tracking-[0.3em] text-[#501a1a] font-bold mb-12">
+          TIPOS DE BAGELS
+      </h2>
+
+      <!-- Torre + Lista + Bolsa de papel -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+
+        <!-- Izquierda-->
+        <div class="flex items-center gap-6 sm:gap-10 w-full lg:w-1/2 justify-center"> 
+
+          <!-- Imagen de la torre apilada -->
+          <div class="w-44 sm:w-56 md:w-72 lg:w-80 flex flex-shrink-0">
+            <img src="img/baglespanes.webp" alt="Torre de Bagels" class="w-full h-auto object-contain" />
+          </div>
+          <!-- Lista de nombres con línea conectora -->
+          <div class="flex flex-col justify-between h-full space-y-6 sm:space-y-8 text-[#501a1a]">
+                    
+            <div class="flex items-center gap-4">
+              <span class="w-8 sm:w-12 h-[1px] bg-[#501a1a]/40"></span>
+              <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest whitespace-nowrap">ORIGINAL BAGEL</span>
             </div>
 
-        </div>
-    </section>
+                    <div class="flex items-center gap-4">
+                        <span class="w-8 sm:w-12 h-[1px] bg-[#501a1a]/40"></span>
+                        <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest whitespace-nowrap">SEMILLAS DE SÉSAMO</span>
+                    </div>
 
-    <!-- Carrusel -->
-    <div class="w-full overflow-hidden bg-[#f2e4dc] py-3 text-[#501a1a] border-y border-[#501a1a]/20">
-        <div class="animate-marquee whitespace-nowrap font-didot text-sm sm:text-base tracking-[0.2em] uppercase flex">
-            <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
-            <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
-            <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
-        </div>
+                    <div class="flex items-center gap-4">
+                        <span class="w-8 sm:w-12 h-[1px] bg-[#501a1a]/40"></span>
+                        <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest whitespace-nowrap">SEMILLAS DE AMAPOLA</span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="w-8 sm:w-12 h-[1px] bg-[#501a1a]/40"></span>
+                        <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest whitespace-nowrap">SEMILLAS MIX</span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="w-8 sm:w-12 h-[1px] bg-[#501a1a]/40"></span>
+                        <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest whitespace-nowrap">QUESO GRATINADO</span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="w-8 sm:w-12 h-[1px] bg-[#501a1a]/40"></span>
+                        <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest whitespace-nowrap">INTEGRAL BAGEL</span>
+                    </div>
+
+      </div>
     </div>
 
-    <!-- Bagels -->
-    <section id="bagels" class="py-16 md:py-20 bg-[#f2e4dc] text-[#501a1a]">
-        <div class="mx-auto max-w-6xl px-6">
-            <h2 class="text-center font-menu text-xs sm:text-sm uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
-                TIPOS DE BAGELS
-            </h2>
+    <!-- Derecha: Bolsa de papel CABA -->
+      <div class="w-full lg:w-5/12 flex justify-center lg:justify-end">
+        <img src="img/bagelbolsa.webp" alt="Bolsa Caba Bagels" class="w-64 sm:w-80 md:w-96 h-auto object-contain" />
+      </div>
 
-            <div class="grid gap-12 md:grid-cols-2 items-center justify-items-center">
+      </div>
+
+    </div>
+  </section>
                 
-                <!-- Torre de Bagels -->
-                <div class="w-full max-w-[300px] sm:max-w-[340px] space-y-3 font-menu text-center">
-                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
-                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">ORIGINAL</span>
-                    </div>
-                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
-                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">SESAME SEED</span>
-                    </div>
-                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
-                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">POPPY SEED</span>
-                    </div>
-                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
-                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">EVERYTHING</span>
-                    </div>
-                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
-                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">CHEESE</span>
-                    </div>
-                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
-                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">INTEGRAL</span>
-                    </div>
-                </div>
-
-                <!-- Bagel y Bolsa -->
-                <div class="flex justify-center w-full max-w-[320px] sm:max-w-[400px]">
-                    <img src="img/baglespanes.webp" alt="Bagel y bolsa Caba" class="w-full h-auto object-contain" />
-                </div>
-
-            </div>
-        </div>
-    </section>
 
   <!-- Rellenos -->
     <section id="rellenos" class="bg-[#501a1a] py-16 md:py-20 text-[#f2e4dc]">
         <div class="mx-auto max-w-6xl px-6">
-            <h2 class="text-center font-menu text-xs sm:text-sm uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
+            <h2 class="text-center font-menu text-base sm:text-lg uppercase tracking-[0.3em]  mb-10 md:mb-12">
                 TIPOS DE RELLENOS
             </h2>
 
@@ -309,7 +331,6 @@
     <!-- ================= MÓVIL (md:hidden) ================= -->
     <div class="block md:hidden">
       
-      <!-- Fila 1: Logo e Iconos con separación -->
       <div class="flex items-center justify-between mb-8">
         <img 
           src="img/logoblanco.webp"
