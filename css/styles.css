@@ -85,3 +85,5 @@
     html { scroll-behavior: auto; }
     .producto, .enlace-menu::after, .animate-marquee { animation: none; transition: none; }
 }
+
+
