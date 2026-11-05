@@ -6,7 +6,7 @@
 @layer base {
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 5rem; /* para que la cabecera fija no tape los títulos */
+        scroll-padding-top: 5rem; 
     }
 
     ::selection {
@@ -14,10 +14,7 @@
         color: var(--color-fondo);
     }
 
-    /* MODO OSCURO CAMBIANDO EL TEMA ENTERO
-       Cuando el <html> tiene la clase .dark, redefinimos las variables del @theme.
-       Todas las clases que las usan (bg-fondo, text-texto, border-borde...)
-       cambian solas, sin escribir dark: en cada elemento del HTML. */
+    /* MODO OSCURO CAMBIANDO EL TEMA ENTERO*/
     .dark {
         --color-fondo: #1d140e;
         --color-superficie: #2a1d14;
@@ -32,27 +29,6 @@
 
 /* ---------- COMPONENTS: nuestras clases ---------- */
 @layer components {
-
-    /* Etiqueta de número de producto, como las del cajón */
-    .etiqueta {
-        display: inline-block;
-        padding: 0.2rem 0.75rem;
-        border: 1px dashed var(--color-suave);
-        border-radius: 999px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        color: var(--color-suave);
-    }
-
-    /* Tarjeta de producto: sube y gana sombra al pasar el ratón */
-    .producto {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .producto:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 30px -18px rgb(42 26 16 / 0.45);
-    }
 
     /* Subrayado de los enlaces del menú que crece desde el centro */
     .enlace-menu {
@@ -84,8 +60,28 @@
     }
 }
 
+@layer utilities {
+    .font-didot {
+        font-family: 'GFS Didot', serif;
+    }
+
+    .animate-marquee {
+        display: inline-flex;
+        width: max-content;
+        animation: marquesina 20s linear infinite;
+    }
+}
+
+@keyframes marquesina {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .producto, .enlace-menu::after { transition: none; }
+    .producto, .enlace-menu::after, .animate-marquee { animation: none; transition: none; }
 }
