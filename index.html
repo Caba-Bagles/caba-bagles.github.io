@@ -94,7 +94,7 @@
             <!-- Marco de la foto -->
             <div id="contenedor-hero-img" class="relative w-full h-full overflow-hidden flex items-center justify-center">
                 
-                <img src="img/panadero.webp" alt="Obrador de Caba" class="w-full h-auto md:h-full object-contain object-center pointer-events-none block max-h-[70vh] md:max-h-none" />
+                <img src="img/panaderoinicio.webp" alt="Obrador de Caba" class="w-full h-auto md:h-full object-contain object-center pointer-events-none block max-h-[70vh] md:max-h-none" />
 
                 <!-- Logo flotante -->
                 <div id="badge-caba" title="Arrastrar" class="absolute bottom-2 right-2 sm:bottom-6 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-[#f2e4dc] p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform z-20">
@@ -116,35 +116,74 @@
     </div>
 
     <!-- Bagels -->
-    <section id="bagels" class="py-20 bg-caba-rosa text-caba-marron">
+    <section id="bagels" class="py-16 md:py-20 bg-[#f2e4dc] text-[#501a1a]">
         <div class="mx-auto max-w-6xl px-6">
-            <h2 class="text-center font-menu text-sm uppercase tracking-[0.3em] font-bold mb-12" data-aos="fade-up">
+            <h2 class="text-center font-menu text-xs sm:text-sm uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
                 TIPOS DE BAGELS
             </h2>
-        </div>
 
+            <div class="grid gap-12 md:grid-cols-2 items-center justify-items-center">
+                
+                <!-- Torre de Bagels -->
+                <div class="w-full max-w-[300px] sm:max-w-[340px] space-y-3 font-menu text-center">
+                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
+                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">ORIGINAL</span>
+                    </div>
+                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
+                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">SESAME SEED</span>
+                    </div>
+                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
+                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">POPPY SEED</span>
+                    </div>
+                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
+                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">EVERYTHING</span>
+                    </div>
+                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
+                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">CHEESE</span>
+                    </div>
+                    <div class="relative flex items-center justify-center rounded-full bg-[#501a1a] py-4 text-[#f2e4dc] shadow-md">
+                        <span class="text-xs sm:text-sm font-bold tracking-widest uppercase">INTEGRAL</span>
+                    </div>
+                </div>
+
+                <!-- Bagel y Bolsa -->
+                <div class="flex justify-center w-full max-w-[320px] sm:max-w-[400px]">
+                    <img src="img/bagel-bolsa.webp" alt="Bagel y bolsa Caba" class="w-full h-auto object-contain" />
+                </div>
+
+            </div>
+        </div>
     </section>
 
-        <!-- ================= PREGUNTAS FRECUENTES ================= -->
-        <!-- Reto extra (en casa): convertir en acordeón con jQuery -->
-        <section id="preguntas" class="mx-auto max-w-3xl px-5 py-20">
-            <h2 class="titulo-seccion font-rotulo text-4xl font-bold">Preguntas frecuentes</h2>
+  <!-- Rellenos -->
+    <section id="rellenos" class="bg-[#501a1a] py-16 md:py-20 text-[#f2e4dc]">
+        <div class="mx-auto max-w-6xl px-6">
+            <h2 class="text-center font-menu text-xs sm:text-sm uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
+                TIPOS DE RELLENOS
+            </h2>
 
-            <div class="mt-10 divide-y divide-borde border-y border-borde">
-                <div class="py-5">
-                    <button type="button" class="pregunta w-full text-left font-rotulo text-xl font-bold">¿Vendéis tornillos sueltos?</button>
-                    <p class="respuesta mt-3 text-suave">Sí, y también tuercas, arandelas y tacos. Nos traes el que se te ha perdido y te buscamos su pareja.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+                <div class="w-full max-w-[280px]">
+                    <img src="img/bagleatun.webp" alt="Relleno 1" class="w-full h-auto object-contain rounded-lg" />
                 </div>
-                <div class="py-5">
-                    <button type="button" class="pregunta w-full text-left font-rotulo text-xl font-bold">¿Hacéis arreglos de costura?</button>
-                    <p class="respuesta mt-3 text-suave">No cosemos, pero te vendemos todo lo necesario y te explicamos cómo hacerlo. Bajos, botones y cremalleras, sin miedo.</p>
+                <div class="w-full max-w-[280px]">
+                    <img src="img/baglecarbonara.webp" alt="Relleno 2" class="w-full h-auto object-contain rounded-lg" />
                 </div>
-                <div class="py-5">
-                    <button type="button" class="pregunta w-full text-left font-rotulo text-xl font-bold">¿Hacéis copias de llaves?</button>
-                    <p class="respuesta mt-3 text-suave">Sí, en el momento. Las de seguridad tardan un par de días porque las pedimos al fabricante.</p>
+                <div class="w-full max-w-[280px]">
+                    <img src="img/baglejamonqueso.webp" alt="Relleno 3" class="w-full h-auto object-contain rounded-lg" />
+                </div>
+                <div class="w-full max-w-[280px]">
+                    <img src="img/baglemermelada.webp" alt="Relleno 4" class="w-full h-auto object-contain rounded-lg" />
+                </div>
+                <div class="w-full max-w-[280px]">
+                    <img src="img/bagleplatano.webp" alt="Relleno 5" class="w-full h-auto object-contain rounded-lg" />
+                </div>
+                <div class="w-full max-w-[280px]">
+                    <img src="img/bagleverduras.webp" alt="Relleno 6" class="w-full h-auto object-contain rounded-lg" />
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- ================= VISÍTANOS ================= -->
         <section id="visitanos" class="bg-texto py-20 text-fondo">
