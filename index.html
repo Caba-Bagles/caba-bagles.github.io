@@ -321,7 +321,7 @@
       <!-- Botón -->
       <button 
         type="submit" 
-        class="w-full py-3.5 bg-texto-claro text-superficie font-menu font-bold tracking-widest uppercase rounded-xl hover:opacity-90 transition-opacity"
+        class="w-full py-3.5 bg-[#e295a0] text-superficie font-menu font-bold tracking-widest uppercase rounded-xl hover:opacity-90 transition-opacity"
       >
         Suscribirme
       </button>
@@ -330,6 +330,42 @@
 
   </div>
 </section>
+
+<!-- ==================== WIDGET FLOTANTE SIN GLUTEN ==================== -->
+<div class="fixed bottom-6 left-6 z-50 font-texto">
+
+  <!-- 1. Botón pequeño flotante (Rosa) con animación suave en TODO el botón -->
+  <button 
+    id="btn-novedad" 
+    onclick="toggleNovedad()" 
+    class="bg-[#e295a0] text-[#501a1a] font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-[#d88490] hover:scale-105 transition-all duration-300 cursor-pointer animate-bounce"
+  >
+    ¡ NUEVA NOVEDAD !
+  </button>
+
+  <!-- 2. Tarjeta desplegable grande -->
+  <div 
+    id="card-novedad" 
+    class="hidden absolute bottom-0 left-0 w-[280px] sm:w-[320px] bg-[#fffbf7] border-2 border-[#e295a0] p-5 rounded-2xl shadow-2xl transition-all duration-300 z-50 text-[#501a1a]"
+  >
+    <button 
+      onclick="toggleNovedad()" 
+      class="absolute top-3 right-3 text-[#501a1a] opacity-60 hover:opacity-100 font-bold text-lg"
+    >
+      ✕
+    </button>
+    <span class="bg-[#e295a0] text-[#501a1a] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full inline-block mb-2">
+      Lanzamiento
+    </span>
+    <h4 class="font-rotulo text-base md:text-lg font-bold mb-2 leading-tight">
+      ¡Llegaron los Bagels Sin Gluten!
+    </h4>
+    <p class="text-xs md:text-sm leading-relaxed opacity-90 mb-4">
+      Misma esponjosidad, mismo sabor artesano de siempre, pero ahora elaborados en un obrador adaptado y 100% libre de gluten. ¡Ven a probarlos esta semana!
+    </p>
+  </div>
+
+</div>
 
     <!-- ==================== FOOTER ADAPTADO Y ALINEADO ==================== -->
 <footer class="bg-superficie py-8 px-5 md:py-10 md:px-12 text-texto-claro font-texto">
@@ -439,6 +475,23 @@
       once: true     
     });
   });
+  </script>
+
+  <script>
+  function toggleNovedad() {
+    const card = document.getElementById('card-novedad');
+    const btn = document.getElementById('btn-novedad');
+    
+    // Alterna la visibilidad de la ventana desplegable
+    card.classList.toggle('hidden');
+    
+    // Oculta el botón pequeño mientras el cartel grande está abierto (opcional)
+    if (!card.classList.contains('hidden')) {
+      btn.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+      btn.classList.remove('opacity-0', 'pointer-events-none');
+    }
+  }
 </script>
 
 </body>
