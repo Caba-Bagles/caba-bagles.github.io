@@ -194,7 +194,7 @@
   </section>
                 
 
-    <!-- Rellenos -->
+<!-- Rellenos -->
     <section id="rellenos" class="bg-[#501a1a] dark:bg-[#B6A59C] py-16 md:py-20 text-[#f2e4dc] dark:text-[#2C0D0D] transition-colors duration-500">
         <div class="mx-auto max-w-6xl px-6">
             <h2 class="text-center font-menu text-base sm:text-lg uppercase tracking-[0.3em] mb-10 md:mb-12">
@@ -205,9 +205,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
                 
                 <!-- Relleno 1: Plátano -->
-                <div onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/bagleplatano.webp" alt="Bagel de Plátano" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40 group-[.active]:brightness-40" />
-                    <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div onclick="toggleBagel(this)" ontouchstart="toggleBagel(this); event.preventDefault();" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                    <img src="img/bagleplatano.webp" alt="Bagel de Plátano" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                    <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
                             Queso crema, rodajas de plátano fresco, miel pura de azahar y un toque de canela.
                         </p>
@@ -215,9 +215,9 @@
                 </div>
 
                 <!-- Relleno 2: Verduras / Pesto -->
-                <div onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/bagleverduras.webp" alt="Bagel de Verduras" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40 group-[.active]:brightness-40" />
-                    <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div onclick="toggleBagel(this)" ontouchstart="toggleBagel(this); event.preventDefault();" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                    <img src="img/bagleverduras.webp" alt="Bagel de Verduras" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                    <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
                             Tomates cherry asados, pesto fresco de albahaca, queso feta y brotes verdes.
                         </p>
@@ -225,9 +225,9 @@
                 </div>
 
                 <!-- Relleno 3: Mermelada -->
-                <div onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/baglemermelada.webp" alt="Bagel de Mermelada" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40 group-[.active]:brightness-40" />
-                    <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div onclick="toggleBagel(this)" ontouchstart="toggleBagel(this); event.preventDefault();" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                    <img src="img/baglemermelada.webp" alt="Bagel de Mermelada" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                    <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
                             Base de cream cheese artesanal y mermelada casera de frutos rojos.
                         </p>
@@ -235,9 +235,9 @@
                 </div>
 
                 <!-- Relleno 4: Jamón y Queso -->
-                <div onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/baglejamonqueso.webp" alt="Bagel de Jamón y Queso" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40 group-[.active]:brightness-40" />
-                    <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div onclick="toggleBagel(this)" ontouchstart="toggleBagel(this); event.preventDefault();" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                    <img src="img/baglejamonqueso.webp" alt="Bagel de Jamón y Queso" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                    <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
                             Jamón ahumado, queso havarti gratinado, mantequilla de hierbas y orégano.
                         </p>
@@ -245,9 +245,9 @@
                 </div>
 
                 <!-- Relleno 5: Carbonara -->
-                <div onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/baglecarbonara.webp" alt="Bagel Carbonara" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40 group-[.active]:brightness-40" />
-                    <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div onclick="toggleBagel(this)" ontouchstart="toggleBagel(this); event.preventDefault();" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                    <img src="img/baglecarbonara.webp" alt="Bagel Carbonara" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                    <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
                             Guanciale crujiente, crema de yema de huevo, queso pecorino y pimienta negra.
                         </p>
@@ -255,9 +255,9 @@
                 </div>
 
                 <!-- Relleno 6: Atún -->
-                <div onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/bagleatun.webp" alt="Bagel de Atún" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40 group-[.active]:brightness-40" />
-                    <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div onclick="toggleBagel(this)" ontouchstart="toggleBagel(this); event.preventDefault();" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                    <img src="img/bagleatun.webp" alt="Bagel de Atún" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                    <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
                             Atún claro, mayonesa casera, cebolla morada picada y cebollino fresco.
                         </p>

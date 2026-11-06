@@ -154,13 +154,21 @@ function toggleNovedad() {
 }
 
 function toggleBagel(element) {
-  // Busca si hay otro bagel activo y le quita la clase 'active'
+  const isAlreadyActive = element.classList.contains('active');
+
   document.querySelectorAll('.bagel-card').forEach(card => {
-    if (card !== element) {
-      card.classList.remove('active');
-    }
+    card.classList.remove('active');
+    const img = card.querySelector('img');
+    const overlay = card.querySelector('.bagel-overlay');
+    if (img) img.classList.remove('brightness-40');
+    if (overlay) overlay.classList.remove('opacity-100');
   });
 
-  // Alterna la clase 'active' en el bagel tocado
-  element.classList.toggle('active');
+  if (!isAlreadyActive) {
+    element.classList.add('active');
+    const img = element.querySelector('img');
+    const overlay = element.querySelector('.bagel-overlay');
+    if (img) img.classList.add('brightness-40');
+    if (overlay) overlay.classList.add('opacity-100');
+  }
 }
