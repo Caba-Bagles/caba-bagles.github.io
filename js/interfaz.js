@@ -153,22 +153,25 @@ function toggleNovedad() {
     }
 }
 
+
 function toggleBagel(element) {
   const isAlreadyActive = element.classList.contains('active');
 
+  // 1. Ocultar el texto y restaurar el brillo de TODOS los bagels
   document.querySelectorAll('.bagel-card').forEach(card => {
     card.classList.remove('active');
     const img = card.querySelector('img');
     const overlay = card.querySelector('.bagel-overlay');
-    if (img) img.classList.remove('brightness-40');
-    if (overlay) overlay.classList.remove('opacity-100');
+    if (img) img.style.filter = '';
+    if (overlay) overlay.style.opacity = '0';
   });
 
+  // 2. Si el bagel tocado no estaba activo, forzar visualmente la opacidad y el brillo
   if (!isAlreadyActive) {
     element.classList.add('active');
     const img = element.querySelector('img');
     const overlay = element.querySelector('.bagel-overlay');
-    if (img) img.classList.add('brightness-40');
-    if (overlay) overlay.classList.add('opacity-100');
+    if (img) img.style.filter = 'brightness(0.4)';
+    if (overlay) overlay.style.opacity = '1';
   }
 }
