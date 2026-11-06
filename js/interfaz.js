@@ -153,3 +153,14 @@ function toggleNovedad() {
     }
 }
 
+function toggleBagel(element) {
+  // Busca si hay otro bagel activo y le quita la clase 'active'
+  document.querySelectorAll('.bagel-card').forEach(card => {
+    if (card !== element) {
+      card.classList.remove('active');
+    }
+  });
+
+  // Alterna la clase 'active' en el bagel tocado
+  element.classList.toggle('active');
+}
