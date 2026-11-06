@@ -39,15 +39,29 @@ if (botonMenu && menuNavegacion) {
     botonMenu.addEventListener('click', () => {
         menuNavegacion.classList.toggle('hidden');
         menuNavegacion.classList.toggle('flex');
+        const menuAbierto = !menuNavegacion.classList.contains('hidden');
+        botonMenu.setAttribute('aria-expanded', String(menuAbierto));
+        botonMenu.setAttribute('aria-label', menuAbierto ? 'Cerrar menú' : 'Abrir menú');
     });
 
 enlacesMenu.forEach(enlace => {
         enlace.addEventListener('click', () => {
             menuNavegacion.classList.add('hidden');
             menuNavegacion.classList.remove('flex');
+            botonMenu.setAttribute('aria-expanded', 'false');
+            botonMenu.setAttribute('aria-label', 'Abrir menú');
         });
     });
 }
+
+document.querySelectorAll('.bagel-card').forEach(card => {
+    card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleBagel(card);
+        }
+    });
+});
 
 // Arrastrar Logo Flotante (Ratón y Táctil)
 const badge = document.getElementById('badge-caba');
@@ -160,6 +174,7 @@ function toggleBagel(element) {
   // 1. Ocultar el texto y restaurar el brillo de TODOS los bagels
   document.querySelectorAll('.bagel-card').forEach(card => {
     card.classList.remove('active');
+    card.setAttribute('aria-pressed', 'false');
     const img = card.querySelector('img');
     const overlay = card.querySelector('.bagel-overlay');
     if (img) img.style.filter = '';
@@ -169,6 +184,7 @@ function toggleBagel(element) {
   // 2. Si el bagel tocado no estaba activo, forzar visualmente la opacidad y el brillo
   if (!isAlreadyActive) {
     element.classList.add('active');
+    element.setAttribute('aria-pressed', 'true');
     const img = element.querySelector('img');
     const overlay = element.querySelector('.bagel-overlay');
     if (img) img.style.filter = 'brightness(0.4)';
