@@ -13,16 +13,6 @@
         color: var(--color-fondo);
     }
 
-    /* MODO OSCURO CAMBIANDO EL TEMA ENTERO*/
-    .dark {
-        --color-fondo: #1d140e;
-        --color-superficie: #2a1d14;
-        --color-texto: #f2e8d3;
-        --color-suave: #c9a679;
-        --color-acento: #e0a526;
-        --color-borde: #4a3424;
-        color-scheme: dark;
-    }
 }
 
 
