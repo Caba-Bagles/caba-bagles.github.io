@@ -81,6 +81,14 @@
     }
 }
 
+@keyframes wiggle {
+        0%, 100% { transform: rotate(-12deg); }
+        50% { transform: rotate(-4deg) scale(1.05); }
+    }
+    .animate-wiggle {
+        animation: wiggle 3s ease-in-out infinite;
+    }
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .producto, .enlace-menu::after, .animate-marquee { animation: none; transition: none; }

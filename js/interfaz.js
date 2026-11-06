@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // ==========================================
+    // 1. CONTROL DE MODO OSCURO (PERSISTENTE)
+    // ==========================================
+    const btnTheme = document.getElementById('toggle-theme');
+    const iconoTema = document.getElementById('icono-tema');
+    const htmlElement = document.documentElement;
+
+    // Cargar preferencia guardada
+    if (localStorage.getItem('tema') === 'dark') {
+        htmlElement.classList.add('dark');
+        if (iconoTema) iconoTema.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    if (btnTheme) {
+        btnTheme.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            const esOscuro = htmlElement.classList.contains('dark');
+            
+            if (iconoTema) {
+                if (esOscuro) {
+                    iconoTema.classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('tema', 'dark');
+                } else {
+                    iconoTema.classList.replace('fa-sun', 'fa-moon');
+                    localStorage.setItem('tema', 'light');
+                }
+            }
+        });
+    }
+
 // Menú móvil
 const botonMenu = document.getElementById('boton-menu');
 const menuNavegacion = document.getElementById('menu');
@@ -80,3 +112,44 @@ if (badge && contenedorHero) {
     window.addEventListener('touchmove', doDrag, { passive: false });
     window.addEventListener('touchend', stopDrag);
 }
+
+    
+    // 1. Inicializar Typed.js
+    const typedElement = document.getElementById('typed-hero');
+    if (typedElement) {
+        new Typed('#typed-hero', {
+            strings: [
+                'Cada mañana preparamos bagels artesanos desde cero: masa natural, hervidos y horneados al momento, listos para rellenar a tu gusto.'
+            ],
+            typeSpeed: 20,
+            showCursor: true,
+            cursorChar: '|',
+            loop: false
+        });
+    }
+
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    }
+
+});
+
+// 3. Función global para alternar la novedad
+function toggleNovedad() {
+    const card = document.getElementById('card-novedad');
+    const btn = document.getElementById('btn-novedad');
+    
+    if (!card || !btn) return;
+    
+    card.classList.toggle('hidden');
+    
+    if (!card.classList.contains('hidden')) {
+        btn.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+        btn.classList.remove('opacity-0', 'pointer-events-none');
+    }
+}
+
