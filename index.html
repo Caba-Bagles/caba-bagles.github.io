@@ -223,79 +223,126 @@
   </section>
                 
 
-<!-- Rellenos -->
-    <section id="rellenos" class="bg-rotulo dark:bg-lino py-16 md:py-20 text-crema dark:text-noche select-none">
-        <div class="mx-auto max-w-6xl px-6">
-            <h2 class="text-center font-menu text-[22px] sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
-            TIPOS DE RELLENOS
-            </h2>
+  <!-- Rellenos -->
+  <section id="rellenos" class="bg-rotulo dark:bg-lino py-16 md:py-20 text-crema dark:text-noche select-none">
+      <div class="mx-auto max-w-6xl px-6">
+          <h2 class="text-center font-menu text-[22px] sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
+              TIPOS DE RELLENOS
+          </h2>
 
-            <!-- Grid: 1 columna en móvil, 2 en tablet y 3 en ordenador -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-                
-                <!-- Relleno 1: Plátano -->
-                <div role="button" tabindex="0" aria-pressed="false" onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/bagleplatano.webp" alt="Bagel de Plátano" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                    <div style="opacity: 0;" class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center group-hover:!opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                            Queso crema, rodajas de plátano fresco, miel pura de azahar y un toque de canela.
-                        </p>
-                    </div>
-                </div>
+          <!-- Grid: 1 columna en móvil, 2 en tablet y 3 en ordenador -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+              
+              <!-- Relleno 1: Plátano -->
+              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                  <img src="img/bagleplatano.webp" alt="Bagel de Plátano" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                          Queso crema, rodajas de plátano fresco, miel pura de azahar y un toque de canela.
+                      </p>
+                  </div>
+              </div>
 
-                <!-- Relleno 2: Verduras / Pesto -->
-                <div role="button" tabindex="0" aria-pressed="false" onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/bagleverduras.webp" alt="Bagel de Verduras" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                    <div style="opacity: 0;" class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center group-hover:!opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                            Tomates cherry asados, pesto fresco de albahaca, queso feta y brotes verdes.
-                        </p>
-                    </div>
-                </div>
+              <!-- Relleno 2: Verduras / Pesto -->
+              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                  <img src="img/bagleverduras.webp" alt="Bagel de Verduras" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                          Tomates cherry asados, pesto fresco de albahaca, queso feta y brotes verdes.
+                      </p>
+                  </div>
+              </div>
 
-                <!-- Relleno 3: Mermelada -->
-                <div role="button" tabindex="0" aria-pressed="false" onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/baglemermelada.webp" alt="Bagel de Mermelada" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                    <div style="opacity: 0;" class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center group-hover:!opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                            Base de cream cheese artesanal y mermelada casera de frutos rojos.
-                        </p>
-                    </div>
-                </div>
+              <!-- Relleno 3: Mermelada -->
+              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                  <img src="img/baglemermelada.webp" alt="Bagel de Mermelada" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                          Base de cream cheese artesanal y mermelada casera de frutos rojos.
+                      </p>
+                  </div>
+              </div>
 
-                <!-- Relleno 4: Jamón y Queso -->
-                <div role="button" tabindex="0" aria-pressed="false" onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/baglejamonqueso.webp" alt="Bagel de Jamón y Queso" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                    <div style="opacity: 0;" class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center group-hover:!opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                            Jamón ahumado, queso havarti gratinado, mantequilla de hierbas y orégano.
-                        </p>
-                    </div>
-                </div>
+              <!-- Relleno 4: Jamón y Queso -->
+              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                  <img src="img/baglejamonqueso.webp" alt="Bagel de Jamón y Queso" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                          Jamón ahumado, queso havarti gratinado, mantequilla de hierbas y orégano.
+                      </p>
+                  </div>
+              </div>
 
-                <!-- Relleno 5: Carbonara -->
-                <div role="button" tabindex="0" aria-pressed="false" onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/baglecarbonara.webp" alt="Bagel Carbonara" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                    <div style="opacity: 0;" class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center group-hover:!opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                            Guanciale crujiente, crema de yema de huevo, queso pecorino y pimienta negra.
-                        </p>
-                    </div>
-                </div>
+              <!-- Relleno 5: Carbonara -->
+              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                  <img src="img/baglecarbonara.webp" alt="Bagel Carbonara" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                          Guanciale crujiente, crema de yema de huevo, queso pecorino y pimienta negra.
+                      </p>
+                  </div>
+              </div>
 
-                <!-- Relleno 6: Atún -->
-                <div role="button" tabindex="0" aria-pressed="false" onclick="toggleBagel(this)" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                    <img src="img/bagleatun.webp" alt="Bagel de Atún" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                    <div style="opacity: 0;" class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center group-hover:!opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                            Atún claro, mayonesa casera, cebolla morada picada y cebollino fresco.
-                        </p>
-                    </div>
-                </div>
+              <!-- Relleno 6: Atún -->
+              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                  <img src="img/bagleatun.webp" alt="Bagel de Atún" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                          Atún claro, mayonesa casera, cebolla morada picada y cebollino fresco.
+                      </p>
+                  </div>
+              </div>
 
-            </div>
+          </div>
+      </div>
+  </section>
+
+<!-- WIDGET FLOTANTE (Esquina inferior izquierda) -->
+  <div class="fixed bottom-6 left-6 z-50 font-menu">
+    <a 
+      id="btn-novedad-flotante"
+      href="#bloque-novedad" 
+      class="inline-block bg-rosa-caba text-rotulo font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-rosa-hover hover:scale-105 transition-all duration-500 cursor-pointer animate-bounce"
+    >
+      ¡ NUEVA NOVEDAD !
+    </a>
+  </div>
+
+  <!-- SECCIÓN NOVEDAD (Justo después del </section> de #rellenos) -->
+  <section id="bloque-novedad" class="w-full py-16 px-4 md:px-12 bg-papel dark:bg-[#230A0A] border-b border-rotulo/10 dark:border-white/10 overflow-hidden">
+    <div class="mx-auto max-w-4xl">
+      
+      <!-- Tarjeta que se expande al scrollear -->
+      <div 
+        id="tarjeta-novedad-expandible" 
+        class="relative bg-crema dark:bg-noche border-2 border-rosa-caba rounded-3xl p-6 sm:p-10 transition-all duration-700 ease-out transform scale-90 opacity-40"
+      >
+        <span class="bg-rosa-caba text-rotulo font-menu text-[10px] sm:text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm inline-block mb-4">
+          ¡NUEVA NOVEDAD!
+        </span>
+
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          <div class="w-full md:w-2/3 text-center md:text-left space-y-3">
+            <h3 class="font-menu text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-wider text-rotulo dark:text-white leading-tight">
+              ¡Llegaron los Bagels <span class="text-rosa-hover underline decoration-rosa-caba">Sin Gluten</span>!
+            </h3>
+            <p class="font-texto text-xs sm:text-sm leading-relaxed text-rotulo/90 dark:text-crema/90">
+              Misma esponjosidad, mismo sabor artesano de siempre, pero ahora elaborados en un obrador adaptado y 100% libre de gluten. ¡Ven a probarlos esta semana!
+            </p>
+          </div>
+
+          <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+            <a href="#visitanos" class="bg-rosa-caba hover:bg-rosa-hover text-rotulo font-menu text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:scale-105">
+              Probar Ahora
+            </a>
+          </div>
+
         </div>
-    </section>
+      </div>
+
+    </div>
+  </section>
 
     <!-- NOSOTROS -->
 
@@ -404,43 +451,8 @@
       </div>
     </section>
 
-    <!-- WIDGET FLOTANTE SIN GLUTEN -->
-    <div class="fixed bottom-15 left-6 z-50 font-texto">
 
-      <!-- 1. Botón pequeño flotante (Rosa) -->
-      <button 
-        id="btn-novedad" 
-        onclick="toggleNovedad()" 
-        class="bg-rosa-caba text-rotulo font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-rosa-hover hover:scale-105 transition-all duration-300 cursor-pointer animate-bounce"
-      >
-        ¡ NUEVA NOVEDAD !
-      </button>
-
-      <!-- 2. Tarjeta desplegable grande -->
-      <div 
-        id="card-novedad" 
-        class="hidden absolute bottom-0 left-0 w-[280px] sm:w-[320px] bg-papel border-2 border-rosa-caba p-5 rounded-2xl shadow-2xl transition-all duration-300 z-50 text-rotulo"
-      >
-        <button 
-          onclick="toggleNovedad()" 
-          class="absolute top-3 right-3 text-rotulo opacity-60 hover:opacity-100 font-bold text-lg"
-        >
-          ✕
-        </button>
-        <span class="bg-rosa-caba text-rotulo text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full inline-block mb-2">
-          Lanzamiento
-        </span>
-        <h4 class="font-rotulo text-base md:text-lg font-bold mb-2 leading-tight">
-          ¡Llegaron los Bagels Sin Gluten!
-        </h4>
-        <p class="text-xs md:text-sm leading-relaxed opacity-90 mb-4">
-          Misma esponjosidad, mismo sabor artesano de siempre, pero ahora elaborados en un obrador adaptado y 100% libre de gluten. ¡Ven a probarlos esta semana!
-        </p>
-      </div>
-
-    </div>
-
-    </main>
+</main>
 
     <!-- FOOTER -->
     <footer class="bg-rotulo dark:bg-noche py-8 px-5 md:py-10 md:px-12 text-crema dark:text-white font-texto">
