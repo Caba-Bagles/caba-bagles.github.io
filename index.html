@@ -102,12 +102,12 @@
 
 <main>
 
-<!-- Portada con texto bajado en móvil -->
+  <!-- Portada con texto bajado en móvil -->
   <section id="inicio" class="relative w-full bg-rotulo dark:bg-lino p-0 flex flex-col md:flex-row items-center justify-center overflow-hidden">
-        
+    
     <div class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center">
       
-      <!-- Caja de texto: Bajada en móvil con mt-4 sm:mt-6 pt-6 pb-4 -->
+      <!-- Caja de texto: Superior en móvil -->
       <div class="w-full px-6 pt-6 pb-4 mt-4 sm:mt-6 mb-2 md:mt-0 md:mb-0 md:py-0 md:absolute md:top-[70px] lg:top-[85px] md:left-[-60px] lg:left-[-70px] md:max-w-[340px] lg:max-w-[380px] z-30">
         <p class="font-menu text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed tracking-wide font-medium text-crema dark:text-white drop-shadow-md break-words min-h-[120px] sm:min-h-[100px]">
           <span id="typed-hero"></span>
@@ -119,12 +119,16 @@
         <img src="img/panaderoinicio.webp" alt="Obrador de Caba" class="w-full h-auto object-cover object-center pointer-events-none block" />
 
         <!-- Logo flotante -->
-        <div id="badge-caba" title="Arrastrar" class="absolute bottom-20 right-3 sm:bottom-25 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-crema text-rotulo dark:bg-noche p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform -rotate-12 z-20 touch-none opacity-85">
-          <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none dark:brightness-0 dark:invert animate-wiggle " />
+        <div id="badge-caba" title="Arrastrar" class="absolute bottom-6 right-3 sm:bottom-12 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-crema text-rotulo dark:bg-noche p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform -rotate-12 z-20 touch-none opacity-85">
+          <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none dark:brightness-0 dark:invert animate-wiggle" />
         </div>
       </div>
 
     </div>
+
+    <!-- Bloque de margen marrón inferior (SOLO MÓVIL) -->
+    <div class="w-full h-40 sm:h-24 bg-rotulo dark:bg-lino block md:hidden"></div>
+
   </section>
 
   <!-- Carrusel -->
@@ -422,34 +426,48 @@
 
     </section>
 
-        <!-- SECCIÓN NEWSLETTER -->
-    <section class="bg-rotulo dark:bg-lino py-12 px-6 font-texto text-crema dark:text-white border-b border-crema/10 dark:border-white/10">
-      <div class="max-w-md mx-auto space-y-5">
+  <!-- SECCIÓN NEWSLETTER -->
+  <section class="bg-rotulo dark:bg-lino py-12 px-6 font-texto text-crema dark:text-white border-b border-crema/10 dark:border-white/10">
+    <div class="max-w-md mx-auto space-y-5">
+      
+      <!-- Texto descriptivo -->
+      <p class="text-base md:text-lg font-normal leading-tight text-center md:text-center tracking-wide">
+        Suscríbete a nuestra newsletter y entérate de todas las novedades
+      </p>
+
+      <!-- Formulario -->
+      <form id="form-newsletter" class="space-y-4">
         
-        <!-- Texto descriptivo -->
-        <p class="text-base md:text-lg font-normal leading-tight text-center md:text-center tracking-wide ">
-          Suscríbete a nuestra newsletter y entérate de todas las novedades
-        </p>
+        <!-- Campo de correo -->
+        <div>
+          <input 
+            type="email" 
+            id="email-newsletter"
+            placeholder="Tu email" 
+            required 
+            class="w-full px-4 py-3.5 bg-transparent border border-crema/80 dark:border-white/80 rounded-xl text-crema dark:text-white placeholder-texto-claro/60 focus:outline-none focus:ring-2 focus:ring-texto-claro transition-all"
+          />
+        </div>
 
-        <!-- Formulario -->
-        <form class="space-y-4" onsubmit="event.preventDefault();">
-          
-          <!-- Campo de correo -->
-          <div>
-            <input type="email" placeholder="Tu email" required class="w-full px-4 py-3.5 bg-transparent border border-crema/8 dark:border-white/80 rounded-xl text-crema dark:text-white placeholder-texto-claro/60 focus:outline-none focus:ring-2 focus:ring-texto-claro transition-all"/>
-          </div>
+        <!-- Botón -->
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-rosa-caba text-rotulo dark:text-noche font-menu font-bold tracking-widest uppercase rounded-xl hover:opacity-70 transition-opacity cursor-pointer">
+          Suscribirme
+        </button>
 
-          <!-- Botón -->
-          <button 
-            type="submit" 
-            class="w-full py-3.5 bg-rosa-caba text-rotulo dark:text-noche font-menu font-bold tracking-widest uppercase rounded-xl hover:opacity-70 transition-opacity cursor-pointer">
-            Suscribirme
-          </button>
+      </form>
 
-        </form>
-
+      <!-- Mensaje de confirmación (oculto por defecto) -->
+      <div 
+        id="mensaje-newsletter" 
+        class="hidden p-4 bg-crema/20 dark:bg-white/20 border border-rosa-caba text-crema dark:text-white text-center text-sm font-menu rounded-xl animate-fade-in"
+      >
+        ¡Gracias por suscribirte! Te hemos enviado un correo de confirmación.
       </div>
-    </section>
+
+    </div>
+  </section>
 
 
 </main>

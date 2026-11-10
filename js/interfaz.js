@@ -5,6 +5,7 @@ const btnTheme = document.getElementById('toggle-theme');
 const iconoTema = document.getElementById('icono-tema');
 const htmlElement = document.documentElement;
 
+// Cargar preferencia guardada en localStorage
 if (localStorage.getItem('tema') === 'dark') {
     htmlElement.classList.add('dark');
     if (iconoTema) iconoTema.classList.replace('fa-moon', 'fa-sun');
@@ -58,7 +59,7 @@ if (botonMenu && menuNavegacion) {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.bagel-card').forEach(card => {
-        // En Móvil (táctil): El tap fija la tarjeta. En PC lo ignora
+        // En Móvil (táctil): El tap fija la tarjeta. En PC lo ignora por completo
         card.addEventListener('click', (e) => {
             const esOrdenador = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
             if (esOrdenador) return; 
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleBagel(element) {
     const isAlreadyActive = element.classList.contains('active');
 
+    // Restaurar estado de todas las tarjetas
     document.querySelectorAll('.bagel-card').forEach(card => {
         card.classList.remove('active');
         card.setAttribute('aria-pressed', 'false');
@@ -88,6 +90,7 @@ function toggleBagel(element) {
         if (overlay) overlay.style.opacity = '';
     });
 
+    // Activar tarjeta seleccionada solo en pantallas táctiles (móvil)
     if (!isAlreadyActive) {
         element.classList.add('active');
         element.setAttribute('aria-pressed', 'true');
@@ -135,6 +138,7 @@ if (badge && contenedorHero) {
         let newLeft = clientX - heroRect.left - offsetX;
         let newTop = clientY - heroRect.top - offsetY;
 
+        // Restricciones de límites dentro del contenedor
         newLeft = Math.max(0, Math.min(newLeft, heroRect.width - badgeWidth));
         newTop = Math.max(0, Math.min(newTop, heroRect.height - badgeHeight));
 
@@ -149,10 +153,12 @@ if (badge && contenedorHero) {
         badge.classList.add('transition-transform');
     };
 
+    // Eventos para ratón (PC)
     badge.addEventListener('mousedown', startDrag);
     window.addEventListener('mousemove', doDrag);
     window.addEventListener('mouseup', stopDrag);
 
+    // Eventos para toque (Móvil)
     badge.addEventListener('touchstart', startDrag, { passive: false });
     window.addEventListener('touchmove', doDrag, { passive: false });
     window.addEventListener('touchend', stopDrag);
@@ -162,6 +168,7 @@ if (badge && contenedorHero) {
 // 5. INICIALIZACIÓN DE LIBRERÍAS
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Typed.js
     const typedElement = document.getElementById('typed-hero');
     if (typedElement && typeof Typed !== 'undefined') {
         new Typed('#typed-hero', {
@@ -175,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // AOS.js
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
@@ -226,3 +234,95 @@ function toggleNovedad() {
         btn.classList.remove('opacity-0', 'pointer-events-none');
     }
 }
+
+// ==========================================
+// 7. APERTURA INFALIBLE DE MODALES (FOOTER)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const modalPrivacidad = document.getElementById('modal-privacidad');
+    const modalTerminos = document.getElementById('modal-terminos');
+
+    const btnPrivDesktop = document.getElementById('btn-privacidad-desktop');
+    const btnPrivMobile = document.getElementById('btn-privacidad-mobile');
+    const btnTermDesktop = document.getElementById('btn-terminos-desktop');
+    const btnTermMobile = document.getElementById('btn-terminos-mobile');
+
+    const btnCerrarPriv = document.getElementById('btn-cerrar-privacidad');
+    const btnCerrarTerm = document.getElementById('btn-cerrar-terminos');
+
+    const abrirModal = (modal) => {
+        if (modal) modal.classList.remove('hidden');
+    };
+
+    const cerrarModal = (modal) => {
+        if (modal) modal.classList.add('hidden');
+    };
+
+    // Política de Privacidad (Soporta Click y Touchend táctil)
+    [btnPrivDesktop, btnPrivMobile].forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                abrirModal(modalPrivacidad);
+            });
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                abrirModal(modalPrivacidad);
+            });
+        }
+    });
+
+    // Términos y Condiciones (Soporta Click y Touchend táctil)
+    [btnTermDesktop, btnTermMobile].forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                abrirModal(modalTerminos);
+            });
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                abrirModal(modalTerminos);
+            });
+        }
+    });
+
+    // Eventos de Cierre
+    if (btnCerrarPriv) {
+        btnCerrarPriv.addEventListener('click', () => cerrarModal(modalPrivacidad));
+        btnCerrarPriv.addEventListener('touchend', () => cerrarModal(modalPrivacidad));
+    }
+    if (btnCerrarTerm) {
+        btnCerrarTerm.addEventListener('click', () => cerrarModal(modalTerminos));
+        btnCerrarTerm.addEventListener('touchend', () => cerrarModal(modalTerminos));
+    }
+
+    // Cerrar al pulsar sobre el fondo oscuro
+    [modalPrivacidad, modalTerminos].forEach(modal => {
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) cerrarModal(modal);
+            });
+        }
+    });
+});
+
+// ==========================================
+// 8. FORMULARIO DE NEWSLETTER
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const formNewsletter = document.getElementById('form-newsletter');
+    const inputEmail = document.getElementById('email-newsletter');
+    const mensajeNewsletter = document.getElementById('mensaje-newsletter');
+
+    if (formNewsletter && inputEmail && mensajeNewsletter) {
+        formNewsletter.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita la recarga de página
+
+            if (inputEmail.value.trim() !== '') {
+                formNewsletter.classList.add('hidden');
+                mensajeNewsletter.classList.remove('hidden');
+                inputEmail.value = '';
+            }
+        });
+    }
+});
