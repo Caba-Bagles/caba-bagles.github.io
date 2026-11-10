@@ -454,103 +454,115 @@
 
 </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-rotulo dark:bg-noche py-8 px-5 md:py-10 md:px-12 text-crema dark:text-white font-texto">
-        <div class="max-w-[1400px] mx-auto">
+<!-- FOOTER -->
+<footer class="bg-rotulo dark:bg-noche py-8 px-5 md:py-10 md:px-12 text-crema dark:text-white font-texto relative z-10">
+  <div class="max-w-[1400px] mx-auto">
+  
+    <!-- ESCRITORIO -->
+    <div class="hidden md:block space-y-6">
+      
+      <!-- Logo a la izquierda e Iconos a la derecha -->
+      <div class="flex items-center justify-between">
+        <img 
+          src="img/logoblanco.webp" 
+          alt="Logo Caba" 
+          class="h-20 w-auto object-contain brightness-0 invert" 
+        />
         
-        <!-- ESCRITORIO  -->
-        <div class="hidden md:block space-y-6">
-          
-          <!-- Logo a la izquierda e Iconos a la derecha -->
-          <div class="flex items-center justify-between">
-            <img 
-              src="img/logoblanco.webp" 
-              alt="Logo Caba" 
-              class="h-20 w-auto object-contain brightness-0 invert" 
-            />
-            
-            <div class="flex gap-x-5 items-center text-2xl">
-              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Fila 2: Copyright y Políticas con modales -->
-          <div class="flex items-center justify-between text-[12px] tracking-wider pt-2 border-t border-crema/10 dark:border-white/10">
-            <p class="tracking-widest">
-              © 2026 Caba. Todos los derechos reservados.
-            </p>
-            <div class="flex gap-x-2 font-normal">
-              <button type="button" onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" class="hover:underline cursor-pointer">Política de privacidad</button>
-              <span class="opacity-70">|</span>
-              <button type="button" onclick="document.getElementById('modal-terminos').classList.remove('hidden')" class="hover:underline cursor-pointer">Términos y condiciones</button>
-            </div>
-          </div>
-
+        <div class="flex gap-x-5 items-center text-2xl">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
+      </div>
 
-        <!--MÓVIL -->
-        <div class="block md:hidden">
-          
-          <div class="flex items-center justify-between mb-8">
-            <img 
-              src="img/logoblanco.webp"
-              alt="Logo Caba" 
-              class="h-16 w-auto object-contain brightness-0 invert" 
-            />
-            <div class="flex gap-x-5 items-center text-2xl">
-              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Fila 2: Textos inferiores separados del logo -->
-          <div class="flex w-full gap-x-6 items-start pt-4 border-t border-crema/10 dark:border-white/10">
-            <p class="text-[11px] w-1/2 leading-relaxed tracking-wider font-normal">
-              © 2026 Caba. Todos los derechos reservados.
-            </p>
-            <div class="text-[11px] w-1/2 flex flex-col items-end leading-relaxed tracking-wider font-normal text-right space-y-1">
-              <a href="#" class="hover:underline">Política de privacidad</a>
-              <a href="#" class="hover:underline">Términos y condiciones</a>
-            </div>
-          </div>
-
+      <!-- Fila 2: Copyright y Políticas con modales -->
+      <div class="flex items-center justify-between text-[12px] tracking-wider pt-2 border-t border-crema/10 dark:border-white/10">
+        <p class="tracking-widest">
+          © 2026 Caba. Todos los derechos reservados.
+        </p>
+        <div class="flex gap-x-2 font-normal">
+          <button type="button" onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" class="hover:underline cursor-pointer">Política de privacidad</button>
+          <span class="opacity-70">|</span>
+          <button type="button" onclick="document.getElementById('modal-terminos').classList.remove('hidden')" class="hover:underline cursor-pointer">Términos y condiciones</button>
         </div>
-
       </div>
-    </footer>
 
-    <!-- Modal Política de Privacidad -->
-  <div id="modal-privacidad" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
-      <button type="button" onclick="document.getElementById('modal-privacidad').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
-      <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Política de Privacidad</h3>
-      <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
-        <p>En <strong>Caba - Bagels Artesanales</strong> respetamos tu privacidad. Los datos recopilados (como tu correo electrónico en la newsletter) se utilizan únicamente para enviarte novedades y promociones de nuestro obrador.</p>
-        <p>No compartimos ni vendemos tu información a terceros. Puedes darte de baja en cualquier momento poniéndote en contacto con nosotros.</p>
+    </div>
+
+    <!-- MÓVIL (Misma estructura visual, abriendo modales) -->
+    <div class="block md:hidden">
+      
+      <div class="flex items-center justify-between mb-8">
+        <img 
+          src="img/logoblanco.webp"
+          alt="Logo Caba" 
+          class="h-16 w-auto object-contain brightness-0 invert" 
+        />
+        <div class="flex gap-x-5 items-center text-2xl">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
       </div>
+
+      <!-- Fila 2: Textos inferiores (Tu maquetación exacta + Modales activados) -->
+      <div class="flex w-full gap-x-6 items-start pt-4 border-t border-crema/10 dark:border-white/10">
+        <p class="text-[11px] w-1/2 leading-relaxed tracking-wider font-normal">
+          © 2026 Caba. Todos los derechos reservados.
+        </p>
+        <div class="text-[11px] w-1/2 flex flex-col items-end leading-relaxed tracking-wider font-normal text-right space-y-1">
+          <button 
+            type="button" 
+            onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" 
+            class="hover:underline text-right py-1 cursor-pointer touch-manipulation"
+          >
+            Política de privacidad
+          </button>
+          <button 
+            type="button" 
+            onclick="document.getElementById('modal-terminos').classList.remove('hidden')" 
+            class="hover:underline text-right py-1 cursor-pointer touch-manipulation"
+          >
+            Términos y condiciones
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<!-- Modal Política de Privacidad -->
+<div id="modal-privacidad" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
+    <button type="button" onclick="document.getElementById('modal-privacidad').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
+    <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Política de Privacidad</h3>
+    <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
+      <p>En <strong>Caba - Bagels Artesanales</strong> respetamos tu privacidad. Los datos recopilados (como tu correo electrónico en la newsletter) se utilizan únicamente para enviarte novedades y promociones de nuestro obrador.</p>
+      <p>No compartimos ni vendemos tu información a terceros. Puedes darte de baja en cualquier momento poniéndote en contacto con nosotros.</p>
     </div>
   </div>
+</div>
 
-  <!-- Modal Términos y Condiciones -->
-  <div id="modal-terminos" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
-      <button type="button" onclick="document.getElementById('modal-terminos').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
-      <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Términos y Condiciones</h3>
-      <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
-        <p>Al navegar por esta web aceptas disfrutar de nuestros bagels elaborados artesanalmente con ingredientes 100% naturales.</p>
-        <p>Los precios y la disponibilidad de los productos pueden variar según la temporada y existencias en tienda física.</p>
-      </div>
+<!-- Modal Términos y Condiciones -->
+<div id="modal-terminos" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
+    <button type="button" onclick="document.getElementById('modal-terminos').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
+    <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Términos y Condiciones</h3>
+    <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
+      <p>Al navegar por esta web aceptas disfrutar de nuestros bagels elaborados artesanalmente con ingredientes 100% naturales.</p>
+      <p>Los precios y la disponibilidad de los productos pueden variar según la temporada y existencias en tienda física.</p>
     </div>
   </div>
+</div>
 
     <!-- ===== NUESTRO JAVASCRIPT ===== -->
     <script src="js/interfaz.js"></script>
