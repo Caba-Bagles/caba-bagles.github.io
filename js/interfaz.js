@@ -1,36 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // ==========================================
-    // 1. CONTROL DE MODO OSCURO (PERSISTENTE)
-    // ==========================================
-    const btnTheme = document.getElementById('toggle-theme');
-    const iconoTema = document.getElementById('icono-tema');
-    const htmlElement = document.documentElement;
+// ==========================================
+// 1. CONTROL DE MODO OSCURO (PERSISTENTE)
+// ==========================================
+const btnTheme = document.getElementById('toggle-theme');
+const iconoTema = document.getElementById('icono-tema');
+const htmlElement = document.documentElement;
 
-    // Cargar preferencia guardada
-    if (localStorage.getItem('tema') === 'dark') {
-        htmlElement.classList.add('dark');
-        if (iconoTema) iconoTema.classList.replace('fa-moon', 'fa-sun');
-    }
+if (localStorage.getItem('tema') === 'dark') {
+    htmlElement.classList.add('dark');
+    if (iconoTema) iconoTema.classList.replace('fa-moon', 'fa-sun');
+}
 
-    if (btnTheme) {
-        btnTheme.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            const esOscuro = htmlElement.classList.contains('dark');
-            
-            if (iconoTema) {
-                if (esOscuro) {
-                    iconoTema.classList.replace('fa-moon', 'fa-sun');
-                    localStorage.setItem('tema', 'dark');
-                } else {
-                    iconoTema.classList.replace('fa-sun', 'fa-moon');
-                    localStorage.setItem('tema', 'light');
-                }
+if (btnTheme) {
+    btnTheme.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark');
+        const esOscuro = htmlElement.classList.contains('dark');
+        
+        if (iconoTema) {
+            if (esOscuro) {
+                iconoTema.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('tema', 'dark');
+            } else {
+                iconoTema.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('tema', 'light');
             }
-        });
-    }
+        }
+    });
+}
 
-// Menú móvil
+// ==========================================
+// 2. MENÚ MÓVIL RESPONSIVE
+// ==========================================
 const botonMenu = document.getElementById('boton-menu');
 const menuNavegacion = document.getElementById('menu');
 const enlacesMenu = document.querySelectorAll('.enlace-menu');
@@ -44,7 +43,7 @@ if (botonMenu && menuNavegacion) {
         botonMenu.setAttribute('aria-label', menuAbierto ? 'Cerrar menú' : 'Abrir menú');
     });
 
-enlacesMenu.forEach(enlace => {
+    enlacesMenu.forEach(enlace => {
         enlace.addEventListener('click', () => {
             menuNavegacion.classList.add('hidden');
             menuNavegacion.classList.remove('flex');
@@ -54,16 +53,54 @@ enlacesMenu.forEach(enlace => {
     });
 }
 
-document.querySelectorAll('.bagel-card').forEach(card => {
-    card.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
+// ==========================================
+// 3. RELLENOS: ACCESIBILIDAD Y TOQUE MÓVIL
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.bagel-card').forEach(card => {
+        // En Móvil (táctil): El tap fija la tarjeta
+        card.addEventListener('click', (e) => {
+            const esOrdenador = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            if (esOrdenador) return; // En PC ignora el clic completamente
+            
             toggleBagel(card);
-        }
+        });
+
+        // Accesibilidad por teclado
+        card.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleBagel(card);
+            }
+        });
     });
 });
 
-// Arrastrar Logo Flotante (Ratón y Táctil)
+function toggleBagel(element) {
+    const isAlreadyActive = element.classList.contains('active');
+
+    document.querySelectorAll('.bagel-card').forEach(card => {
+        card.classList.remove('active');
+        card.setAttribute('aria-pressed', 'false');
+        const img = card.querySelector('img');
+        const overlay = card.querySelector('.bagel-overlay');
+        if (img) img.style.filter = '';
+        if (overlay) overlay.style.opacity = '';
+    });
+
+    if (!isAlreadyActive) {
+        element.classList.add('active');
+        element.setAttribute('aria-pressed', 'true');
+        const img = element.querySelector('img');
+        const overlay = element.querySelector('.bagel-overlay');
+        if (img) img.style.filter = 'brightness(0.4)';
+        if (overlay) overlay.style.opacity = '1';
+    }
+}
+
+// ==========================================
+// 4. ARRASTRAR LOGO FLOTANTE (RATÓN Y TÁCTIL)
+// ==========================================
 const badge = document.getElementById('badge-caba');
 const contenedorHero = document.getElementById('contenedor-hero-img');
 
@@ -81,7 +118,7 @@ if (badge && contenedorHero) {
         offsetX = clientX - badgeRect.left;
         offsetY = clientY - badgeRect.top;
 
-        badge.classList.remove('transition-transform'); // Quitar transición para movimiento fluido
+        badge.classList.remove('transition-transform');
     };
 
     const doDrag = (e) => {
@@ -98,13 +135,9 @@ if (badge && contenedorHero) {
         let newLeft = clientX - heroRect.left - offsetX;
         let newTop = clientY - heroRect.top - offsetY;
 
-        // Restricción límite Izquierda y Derecha
         newLeft = Math.max(0, Math.min(newLeft, heroRect.width - badgeWidth));
-        
-        // Restricción límite Arriba y Abajo
         newTop = Math.max(0, Math.min(newTop, heroRect.height - badgeHeight));
 
-        // Aplicar la posición relativa al contenedor
         badge.style.left = `${newLeft}px`;
         badge.style.top = `${newTop}px`;
         badge.style.bottom = 'auto';
@@ -116,21 +149,21 @@ if (badge && contenedorHero) {
         badge.classList.add('transition-transform');
     };
 
-    // Eventos para ratón (Escritorio)
     badge.addEventListener('mousedown', startDrag);
     window.addEventListener('mousemove', doDrag);
     window.addEventListener('mouseup', stopDrag);
 
-    // Eventos para toque (Móvil)
     badge.addEventListener('touchstart', startDrag, { passive: false });
     window.addEventListener('touchmove', doDrag, { passive: false });
     window.addEventListener('touchend', stopDrag);
 }
 
-    
-    // 1. Inicializar Typed.js
+// ==========================================
+// 5. INICIALIZACIÓN DE LIBRERÍAS
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
     const typedElement = document.getElementById('typed-hero');
-    if (typedElement) {
+    if (typedElement && typeof Typed !== 'undefined') {
         new Typed('#typed-hero', {
             strings: [
                 'Cada mañana preparamos bagels artesanos desde cero: masa natural, hervidos y horneados al momento, listos para rellenar a tu gusto.'
@@ -148,10 +181,37 @@ if (badge && contenedorHero) {
             once: true
         });
     }
-
 });
 
-// 3. Función global para alternar la novedad
+// ==========================================
+// 6. EXPANSIÓN DE NOVEDADES Y BOTÓN FLOTANTE
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const tarjetaNovedad = document.getElementById('tarjeta-novedad-expandible');
+    const bloqueNovedad = document.getElementById('bloque-novedad');
+    const btnFlotante = document.getElementById('btn-novedad-flotante');
+
+    if (tarjetaNovedad && bloqueNovedad) {
+        const observerNovedad = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tarjetaNovedad.classList.remove('scale-90', 'opacity-40');
+                    tarjetaNovedad.classList.add('scale-100', 'opacity-100', 'shadow-2xl');
+
+                    if (btnFlotante) btnFlotante.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    tarjetaNovedad.classList.remove('scale-100', 'opacity-100', 'shadow-2xl');
+                    tarjetaNovedad.classList.add('scale-90', 'opacity-40');
+
+                    if (btnFlotante) btnFlotante.classList.remove('opacity-0', 'pointer-events-none');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observerNovedad.observe(bloqueNovedad);
+    }
+});
+
 function toggleNovedad() {
     const card = document.getElementById('card-novedad');
     const btn = document.getElementById('btn-novedad');
@@ -165,29 +225,4 @@ function toggleNovedad() {
     } else {
         btn.classList.remove('opacity-0', 'pointer-events-none');
     }
-}
-
-
-function toggleBagel(element) {
-  const isAlreadyActive = element.classList.contains('active');
-
-  // 1. Ocultar el texto y restaurar el brillo de TODOS los bagels
-  document.querySelectorAll('.bagel-card').forEach(card => {
-    card.classList.remove('active');
-    card.setAttribute('aria-pressed', 'false');
-    const img = card.querySelector('img');
-    const overlay = card.querySelector('.bagel-overlay');
-    if (img) img.style.filter = '';
-    if (overlay) overlay.style.opacity = '0';
-  });
-
-  // 2. Si el bagel tocado no estaba activo, forzar visualmente la opacidad y el brillo
-  if (!isAlreadyActive) {
-    element.classList.add('active');
-    element.setAttribute('aria-pressed', 'true');
-    const img = element.querySelector('img');
-    const overlay = element.querySelector('.bagel-overlay');
-    if (img) img.style.filter = 'brightness(0.4)';
-    if (overlay) overlay.style.opacity = '1';
-  }
 }
