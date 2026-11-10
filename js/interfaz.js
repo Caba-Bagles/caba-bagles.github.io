@@ -58,10 +58,10 @@ if (botonMenu && menuNavegacion) {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.bagel-card').forEach(card => {
-        // En Móvil (táctil): El tap fija la tarjeta
+        // En Móvil (táctil): El tap fija la tarjeta. En PC lo ignora
         card.addEventListener('click', (e) => {
             const esOrdenador = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-            if (esOrdenador) return; // En PC ignora el clic completamente
+            if (esOrdenador) return; 
             
             toggleBagel(card);
         });
