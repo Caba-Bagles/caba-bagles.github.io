@@ -1,6 +1,5 @@
 @layer theme, base, components, utilities;
 
-
 /* ---------- BASE: etiquetas y tema ---------- */
 @layer base {
     html {
@@ -9,18 +8,16 @@
     }
 
     ::selection {
-        background: var(--color-acento);
-        color: var(--color-fondo);
+        background: var(--color-rosa-caba);
+        color: var(--color-rotulo);
     }
-
 }
-
 
 /* ---------- COMPONENTS: nuestras clases ---------- */
 @layer components {
 
     :where(a, button, [role="button"]):focus-visible {
-        outline: 2px solid var(--color-acento);
+        outline: 2px solid var(--color-rosa-caba);
         outline-offset: 3px;
     }
 
@@ -29,36 +26,43 @@
         position: relative;
         font-weight: 500;
     }
+    
     .enlace-menu::after {
         content: "";
         position: absolute;
         left: 50%;
-        bottom: 0.2rem;
+        bottom: -0.2rem;
         width: 0;
         height: 2px;
-        background: var(--color-acento);
+        background: currentColor; /* Se adapta automáticamente en modo claro y oscuro */
         transition: width 0.3s ease, left 0.3s ease;
     }
+    
     .enlace-menu:hover::after {
         left: 0;
         width: 100%;
     }
 
-    /* Rombo decorativo delante de los títulos de sección */
+    /* Rombo decorativo opcional para títulos con la clase .titulo-seccion */
     .titulo-seccion::before {
         content: "◆";
         margin-right: 0.6rem;
         font-size: 0.5em;
         vertical-align: middle;
-        color: var(--color-acento);
+        color: var(--color-rosa-caba);
     }
 }
 
+/* ---------- UTILITIES: animaciones propias ---------- */
 @layer utilities {
     .animate-marquee {
         display: inline-flex;
         width: max-content;
         animation: marquesina 20s linear infinite;
+    }
+
+    .animate-wiggle {
+        animation: wiggle 3s ease-in-out infinite;
     }
 }
 
@@ -72,14 +76,15 @@
 }
 
 @keyframes wiggle {
-        0%, 100% { transform: rotate(-12deg); }
-        50% { transform: rotate(-4deg) scale(1.05); }
-    }
-    .animate-wiggle {
-        animation: wiggle 3s ease-in-out infinite;
-    }
+    0%, 100% { transform: rotate(-12deg); }
+    50% { transform: rotate(-4deg) scale(1.05); }
+}
 
+/* Accesibilidad para usuarios con reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .producto, .enlace-menu::after, .animate-marquee { animation: none; transition: none; }
+    .bagel-card, .enlace-menu::after, .animate-marquee, .animate-wiggle { 
+        animation: none !important; 
+        transition: none !important; 
+    }
 }
