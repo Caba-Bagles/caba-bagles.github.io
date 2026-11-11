@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-// AOS.js configurado para que la torre esté bien centrada antes del primer PUM
+// AOS.js configurado para que la torre esté bien centrada
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 500,
@@ -343,20 +343,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const torre = document.getElementById('torre-bagels');
     if (!torre) return;
 
-    // Seleccionamos la base (Integral Bagel) para activar la animación cuando llegue la pantalla
-    const basePanIntegral = torre.querySelector('.z-5'); 
-    if (!basePanIntegral) return;
+    //la base (Integral Bagel) 
+    const basePanIntegral = torre.querySelector('.z-5') || torre; 
 
-    // Invertimos la lista (.reverse()) para que empiece por la base
     const bagels = Array.from(torre.querySelectorAll('.anim-bagel')).reverse(); 
     const textos = Array.from(torre.querySelectorAll('.anim-texto')).reverse();
     const etiquetasMovil = Array.from(torre.querySelectorAll('.anim-etiqueta-movil')).reverse();
 
-    // Inyectar curva de impacto con fuerza (caída rápida y rebote seco)
+    // 1. FORZAR POSICIÓN INICIAL ELEVADA (ARRIBA)
+    // Sobrescribimos el translate positivo por uno negativo para asegurar que caigan desde arriba
+    bagels.forEach(bagel => {
+        bagel.classList.remove('translate-y-16');
+        bagel.classList.add('-translate-y-24'); 
+    });
+
     const aplicarFuerzaImpacto = (el) => {
         el.style.transitionProperty = 'all';
         el.style.transitionDuration = '450ms'; 
-        el.style.transitionTimingFunction = 'cubic-bezier(0.34, 1.56, 0.64, 1)'; // Efecto PUM / Boing
+        el.style.transitionTimingFunction = 'cubic-bezier(0.34, 1.56, 0.64, 1)'; 
     };
 
     bagels.forEach(aplicarFuerzaImpacto);
@@ -369,11 +373,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 bagels.forEach((bagel, index) => {
                     setTimeout(() => {
-                        // Aparece el pan desde abajo hacia arriba con su PUM
-                        bagel.classList.remove('opacity-0', 'translate-y-16');
+                        bagel.classList.remove('opacity-0', '-translate-y-24', '-translate-y-16', 'translate-y-16');
                         bagel.classList.add('opacity-100', 'translate-y-0');
 
-                        // Entran los textos/etiquetas a la vez
                         if (textos[index * 2]) {
                             textos[index * 2].classList.remove('opacity-0', '-translate-x-10');
                             textos[index * 2].classList.add('opacity-100', 'translate-x-0');
@@ -383,17 +385,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             textos[index * 2 + 1].classList.add('opacity-100', 'translate-x-0');
                         }
                         if (etiquetasMovil[index]) {
-                            etiquetasMovil[index].classList.remove('opacity-0', 'translate-y-6');
+                            etiquetasMovil[index].classList.remove('opacity-0', 'translate-y-6', '-translate-y-6');
                             etiquetasMovil[index].classList.add('opacity-100', 'translate-y-0');
                         }
-                    }, index * 450); // 450ms de pausa entre pan y pan
+                    }, index * 400); 
                 });
 
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.5 // Se activa al llegar a la base de la torre
+        threshold: 0.3 // Se activa cuando la base entra holgadamente en pantalla
     });
 
     observerBase.observe(basePanIntegral);
