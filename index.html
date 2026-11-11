@@ -227,22 +227,73 @@
       <!-- Rellenos -->
       <section id="rellenos" class="relative bg-rotulo dark:bg-lino py-16 md:py-20 text-crema dark:text-noche select-none overflow-hidden">
         
-        <!-- FONDO EXCLUSIVO DE ESTA SECCIÓN (Semillas flotantes) -->
-        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-35 dark:opacity-45" aria-hidden="true">
-          <!-- Semillas Negras -->
-          <img src="img/sesamonegro.webp" alt="" class="absolute top-[10%] left-[8%] w-8 sm:w-12 animate-float-slow" />
-          <img src="img/sesamonegro.webp" alt="" class="absolute top-[35%] right-[12%] w-10 sm:w-14 animate-float-reverse" />
-          <img src="img/sesamonegro.webp" alt="" class="absolute top-[65%] left-[15%] w-7 sm:w-10 animate-float-medium" />
-          <img src="img/sesamonegro.webp" alt="" class="absolute bottom-[10%] right-[8%] w-12 sm:w-16 animate-float-slow" />
-          <img src="img/sesamonegro.webp" alt="" class="absolute top-[50%] left-[45%] w-6 sm:w-9 animate-float-reverse" />
+      <!-- FONDO BALANCEADO (20 semillas repartidas uniformemente por cuadrícula) -->
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        
+        <!-- SEMILLAS CLARAS: Modo Claro (dark:hidden) -->
+        <!-- Fila 1 -->
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[5%] left-[8%] w-8 sm:w-11 animate-float-slow dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[5%] left-[32%] w-10 sm:w-13 animate-float-medium dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[5%] left-[58%] w-7 sm:w-9 animate-float-reverse dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[5%] left-[82%] w-9 sm:w-12 animate-float-slow dark:hidden" />
 
-          <!-- Semillas Claras -->
-          <img src="img/sesamoclaro.webp" alt="" class="absolute top-[18%] right-[20%] w-9 sm:w-12 animate-float-medium" />
-          <img src="img/sesamoclaro.webp" alt="" class="absolute top-[42%] left-[6%] w-11 sm:w-15 animate-float-slow" />
-          <img src="img/sesamoclaro.webp" alt="" class="absolute top-[75%] right-[25%] w-8 sm:w-11 animate-float-reverse" />
-          <img src="img/sesamoclaro.webp" alt="" class="absolute bottom-[5%] left-[30%] w-10 sm:w-14 animate-float-medium" />
-          <img src="img/sesamoclaro.webp" alt="" class="absolute top-[5%] left-[55%] w-7 sm:w-10 animate-float-slow" />
-        </div>
+        <!-- Fila 2 -->
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[25%] left-[18%] w-9 sm:w-12 animate-float-reverse dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[25%] left-[42%] w-8 sm:w-10 animate-float-slow dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[25%] left-[68%] w-11 sm:w-14 animate-float-medium dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[25%] left-[90%] w-7 sm:w-9 animate-float-reverse dark:hidden" />
+
+        <!-- Fila 3 -->
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[48%] left-[6%] w-10 sm:w-13 animate-float-medium dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[48%] left-[28%] w-7 sm:w-9 animate-float-reverse dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[48%] left-[52%] w-9 sm:w-12 animate-float-slow dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[48%] left-[78%] w-8 sm:w-11 animate-float-medium dark:hidden" />
+
+        <!-- Fila 4 -->
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[70%] left-[14%] w-8 sm:w-10 animate-float-slow dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[70%] left-[38%] w-11 sm:w-14 animate-float-medium dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[70%] left-[62%] w-7 sm:w-9 animate-float-reverse dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[70%] left-[86%] w-10 sm:w-13 animate-float-slow dark:hidden" />
+
+        <!-- Fila 5 -->
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[90%] left-[8%] w-9 sm:w-12 animate-float-reverse dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[90%] left-[32%] w-8 sm:w-11 animate-float-slow dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[90%] left-[58%] w-10 sm:w-13 animate-float-medium dark:hidden" />
+        <img src="img/sesamoclaro.webp" alt="" class="absolute top-[90%] left-[82%] w-7 sm:w-10 animate-float-reverse dark:hidden" />
+
+
+        <!-- SEMILLAS NEGRAS: Modo Oscuro (hidden dark:block) -->
+        <!-- Fila 1 -->
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[5%] left-[10%] w-9 sm:w-12 animate-float-slow hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[5%] left-[35%] w-7 sm:w-9 animate-float-medium hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[5%] left-[60%] w-11 sm:w-14 animate-float-reverse hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[5%] left-[85%] w-8 sm:w-10 animate-float-slow hidden dark:block" />
+
+        <!-- Fila 2 -->
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[25%] left-[5%] w-8 sm:w-10 animate-float-reverse hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[25%] left-[28%] w-10 sm:w-13 animate-float-slow hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[25%] left-[52%] w-7 sm:w-9 animate-float-medium hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[25%] left-[75%] w-9 sm:w-12 animate-float-reverse hidden dark:block" />
+
+        <!-- Fila 3 -->
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[48%] left-[15%] w-11 sm:w-14 animate-float-medium hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[48%] left-[40%] w-8 sm:w-10 animate-float-reverse hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[48%] left-[65%] w-10 sm:w-13 animate-float-slow hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[48%] left-[88%] w-7 sm:w-9 animate-float-medium hidden dark:block" />
+
+        <!-- Fila 4 -->
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[70%] left-[8%] w-7 sm:w-9 animate-float-slow hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[70%] left-[32%] w-10 sm:w-13 animate-float-medium hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[70%] left-[58%] w-8 sm:w-11 hidden dark:block animate-float-reverse" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[70%] left-[82%] w-11 sm:w-14 hidden dark:block animate-float-slow" />
+
+        <!-- Fila 5 -->
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[90%] left-[12%] w-10 sm:w-13 animate-float-reverse hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[90%] left-[38%] w-7 sm:w-9 animate-float-slow hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[90%] left-[62%] w-9 sm:w-12 animate-float-medium hidden dark:block" />
+        <img src="img/sesamonegro.webp" alt="" class="absolute top-[90%] left-[86%] w-8 sm:w-10 animate-float-reverse hidden dark:block" />
+
+      </div>
 
         <!-- CONTENIDO DE TARJETAS DE RELLENOS -->
         <div class="relative z-10 mx-auto max-w-6xl px-6">
