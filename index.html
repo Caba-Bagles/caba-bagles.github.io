@@ -90,8 +90,8 @@
           </nav>
 
           <!-- Botón de cambio de color -->
-          <button id="toggle-theme" type="button" aria-label="Cambiar modo de color" class="w-8 h-8 flex items-center justify-center text-rotulo dark:text-whitehover:scale-110 transition-transform cursor-pointer flex-shrink-0">
-              <i id="icono-tema" class="fa-solid fa-moon text-xl"></i>
+          <button id="toggle-theme" type="button" aria-label="Cambiar modo de color" class="w-8 h-8 flex items-center justify-center text-rotulo dark:text-white hover:scale-110 transition-transform cursor-pointer flex-shrink-0">
+            <i id="icono-tema" class="fa-solid fa-moon text-xl"></i>
           </button>
 
         </div>
@@ -314,11 +314,7 @@
 
       <!-- WIDGET FLOTANTE (Esquina inferior izquierda) -->
       <div class="fixed bottom-6 left-6 z-50 font-menu">
-        <a 
-          id="btn-novedad-flotante"
-          href="#bloque-novedad" 
-          class="inline-block bg-rosa-caba text-rotulo font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-rosa-hover hover:scale-105 transition-all duration-500 cursor-pointer animate-bounce"
-        >
+        <a id="btn-novedad-flotante" href="#bloque-novedad" class="inline-block bg-rosa-caba text-rotulo font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-rosa-hover hover:scale-105 transition-all duration-500 cursor-pointer animate-bounce">
           ¡ NUEVA NOVEDAD !
         </a>
       </div>
@@ -335,21 +331,24 @@
               ¡NUEVA NOVEDAD!
             </span>
 
-            <!-- Contenedor Flex: Imagen a la izquierda + Texto + Botón -->
+            <!-- Contenedor Flex: Imagen + Texto + Botón -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
               
-              <!-- Imagen del Bagel Sin Gluten (Izquierda) -->
+              <!-- Imagen del Bagel Sin Gluten (Ancho asegurado en móvil) -->
               <div class="w-full md:w-1/3 flex justify-center shrink-0">
                 <img 
                   src="img/bagelsingluten.webp" 
                   alt="Bagel Sin Gluten" 
-                  class="w-48 sm:w-56 md:w-full h-auto object-contain drop-shadow-md pointer-events-none"/>
+                  class="w-40 sm:w-52 md:w-full h-auto max-h-48 md:max-h-none object-contain drop-shadow-md pointer-events-none block"
+                  loading="eager"
+                />
               </div>
 
-              <!-- Bloque de Texto (Centro) -->
+              <!-- Bloque de Texto (Título dividido en 2 líneas) -->
               <div class="w-full md:w-1/2 text-center md:text-left space-y-3">
                 <h3 class="font-menu text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-wider text-rotulo dark:text-white leading-tight">
-                  ¡Llegaron los Bagels <span class="text-rosa-hover underline decoration-rosa-caba">Sin Gluten</span>!
+                  <span>¡Llegaron los Bagels</span>
+                  <span class="block text-rosa-hover underline decoration-rosa-caba mt-1">Sin Gluten!</span>
                 </h3>
                 <p class="font-texto text-xs sm:text-sm leading-relaxed text-rotulo/90 dark:text-crema/90">
                   Misma esponjosidad, mismo sabor artesano de siempre, pero ahora elaborados en un obrador adaptado y 100% libre de gluten. ¡Ven a probarlos esta semana!
