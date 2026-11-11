@@ -5,8 +5,13 @@
 /* ---------- BASE: etiquetas y tema ---------- */
 @layer base {
     html {
-        scroll-behavior: smooth;
+        scroll-behavior: smooth !important;
         scroll-padding-top: 5rem; 
+    }
+
+    body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     ::selection {
