@@ -95,3 +95,46 @@
         transition: none !important; 
     }
 }
+
+/* ==========================================
+   ANIMACIÓN DE SEMILLAS DE SÉSAMO FLOTANTES
+   ========================================== */
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) translateX(0px);
+  }
+  50% {
+    transform: translateY(-25px) rotate(15deg) translateX(12px);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) translateX(0px);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-20deg) translateX(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) translateX(0px);
+  }
+  50% {
+    transform: translateY(22px) rotate(25deg) translateX(-15px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6.5s ease-in-out infinite;
+}
