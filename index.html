@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caba - Bagles Artesanales</title>
@@ -56,531 +56,531 @@
         --font-titulo: "GFS Didot", serif;
         }
     </style>
-</head>
+  </head>
 
-<body class="bg-fondo dark:bg-noche font-texto text-texto dark:text-white antialiased selection:bg-rotulo selection:text-crema">
+  <body class="bg-fondo dark:bg-noche font-texto text-texto dark:text-white antialiased selection:bg-rotulo selection:text-crema">
 
     <!-- Cabecera -->
-<header class="sticky top-0 z-50 bg-crema dark:bg-noche border-b border-transparent dark:border-white/10">
-    <div class="flex w-full items-center justify-between px-6 py-4 md:px-12 relative">
-        
+    <header class="sticky top-0 z-[80] bg-crema dark:bg-noche border-b border-transparent dark:border-white/10">
+      <div class="flex w-full items-center justify-between px-6 py-4 md:px-12 relative">
+            
         <!-- Logo -->
         <a href="#inicio" class="block py-1 hover:opacity-80 transition-opacity">
             <img src="img/logocaba.webp" alt="Logo Caba" class="h-8 md:h-12 w-auto object-contain dark:brightness-0 dark:invert " />
         </a>
 
         <!-- Zona Derecha: Menú + Botón Modo Oscuro -->
-      <div class="flex items-center gap-4 md:gap-8">
+        <div class="flex items-center gap-4 md:gap-8">
 
-        <!-- Botón Menú Móvil -->
-        <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu"
-              aria-label="Abrir menú" class="flex flex-col justify-center items-center w-9 h-9 gap-[5px] md:hidden hover:opacity-80 transition cursor-pointer">
-            <span class="w-7 h-[3px] bg-rotulo dark:bg-white rounded-full"></span>
-            <span class="w-7 h-[3px] bg-rotulo dark:bg-white rounded-full"></span>
-            <span class="w-7 h-[3px] bg-rotulo dark:bg-white rounded-full"></span>
-        </button>
+          <!-- Botón Menú Móvil -->
+          <button id="boton-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú" class="flex flex-col justify-center items-center w-9 h-9 gap-[5px] md:hidden hover:opacity-80 transition cursor-pointer">
+              <span class="w-7 h-[3px] bg-rotulo dark:bg-white rounded-full"></span>
+              <span class="w-7 h-[3px] bg-rotulo dark:bg-white rounded-full"></span>
+              <span class="w-7 h-[3px] bg-rotulo dark:bg-white rounded-full"></span>
+          </button>
 
-        <!-- Navegación -->
-        <nav class="absolute top-full right-6 w-auto md:static" aria-label="Navegación principal">
-            <ul id="menu" class="hidden flex-col items-center space-y-5 bg-crema dark:bg-noche p-4 rounded-b-xl shadow-lg md:flex md:flex-row md:gap-10 md:space-y-0 md:items-center md:static md:p-0 md:bg-transparent md:shadow-none">
-                <li><a href="#bagels" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">BAGELS</a></li>
-                <li><a href="#rellenos" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">RELLENOS</a></li>
-                <li><a href="#nosotros" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">NOSOTROS</a></li>
-                <li><a href="#visitanos" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">CONTACTO</a></li>
-            </ul>
-        </nav>
+          <!-- Navegación -->
+          <nav class="absolute top-full right-6 w-auto md:static" aria-label="Navegación principal">
+              <ul id="menu" class="hidden flex-col items-center space-y-5 bg-crema dark:bg-noche p-4 rounded-b-xl shadow-lg md:flex md:flex-row md:gap-10 md:space-y-0 md:items-center md:static md:p-0 md:bg-transparent md:shadow-none">
+                  <li><a href="#bagels" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">BAGELS</a></li>
+                  <li><a href="#rellenos" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">RELLENOS</a></li>
+                  <li><a href="#nosotros" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">NOSOTROS</a></li>
+                  <li><a href="#visitanos" class="enlace-menu font-menu inline-block text-lg md:text-lg font-extrabold uppercase tracking-wider text-rotulo dark:text-white hover:opacity-80 transition-opacity">CONTACTO</a></li>
+              </ul>
+          </nav>
 
-        <!-- Botón de cambio de color -->
-        <button id="toggle-theme" type="button" aria-label="Cambiar modo de color" class="w-8 h-8 flex items-center justify-center text-rotulo dark:text-white hover:scale-110 transition-transform cursor-pointer flex-shrink-0">
-            <i id="icono-tema" class="fa-solid fa-moon text-xl"></i>
-        </button>
+          <!-- Botón de cambio de color -->
+          <button id="toggle-theme" type="button" aria-label="Cambiar modo de color" class="w-8 h-8 flex items-center justify-center text-rotulo dark:text-whitehover:scale-110 transition-transform cursor-pointer flex-shrink-0">
+              <i id="icono-tema" class="fa-solid fa-moon text-xl"></i>
+          </button>
 
+        </div>
       </div>
+    </header>
 
-    </div>
-</header>
-
-<main>
-
-  <!-- Portada con texto bajado en móvil -->
-  <section id="inicio" class="relative w-full bg-rotulo dark:bg-lino p-0 flex flex-col md:flex-row items-center justify-center overflow-hidden">
-    
-    <div class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center">
+    <main>
+      <!-- Portada con texto bajado en móvil -->
+      <section id="inicio" class="relative w-full bg-rotulo dark:bg-lino p-0 flex flex-col md:flex-row items-center justify-center overflow-hidden">
       
-      <!-- Caja de texto: Superior en móvil -->
-      <div class="w-full px-6 pt-6 pb-4 mt-4 sm:mt-6 mb-2 md:mt-0 md:mb-0 md:py-0 md:absolute md:top-[70px] lg:top-[85px] md:left-[-60px] lg:left-[-70px] md:max-w-[340px] lg:max-w-[380px] z-30">
-        <p class="font-menu text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed tracking-wide font-medium text-crema dark:text-white drop-shadow-md break-words min-h-[120px] sm:min-h-[100px]">
-          <span id="typed-hero"></span>
-        </p>
+      <div class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center">
+        
+        <!-- Caja de texto: Superior en móvil -->
+        <div class="w-full px-6 pt-6 pb-4 mt-4 sm:mt-6 mb-2 md:mt-0 md:mb-0 md:py-0 md:absolute md:top-[70px] lg:top-[85px] md:left-[-60px] lg:left-[-70px] md:max-w-[340px] lg:max-w-[380px] z-30">
+          <p class="font-menu text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed tracking-wide font-medium text-crema dark:text-white drop-shadow-md break-words min-h-[120px] sm:min-h-[100px]">
+            <span id="typed-hero"></span>
+          </p>
+        </div>
+
+        <!-- Marco de la foto -->
+        <div id="contenedor-hero-img" class="relative w-full overflow-hidden flex items-center leading-none justify-center">
+          <img src="img/panaderoinicio.webp" alt="Obrador de Caba" class="w-full h-auto object-cover object-center pointer-events-none block" />
+
+          <!-- Logo flotante -->
+          <div id="badge-caba" title="Arrastrar" class="absolute bottom-6 right-3 sm:bottom-12 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-crema text-rotulo dark:bg-noche p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform -rotate-12 z-20 touch-none opacity-85">
+            <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none dark:brightness-0 dark:invert animate-wiggle" />
+          </div>
+        </div>
+
       </div>
 
-      <!-- Marco de la foto -->
-      <div id="contenedor-hero-img" class="relative w-full overflow-hidden flex items-center leading-none justify-center">
-        <img src="img/panaderoinicio.webp" alt="Obrador de Caba" class="w-full h-auto object-cover object-center pointer-events-none block" />
+      <!-- Bloque de margen marrón inferior (SOLO MÓVIL) -->
+      <div class="w-full h-40 sm:h-24 bg-rotulo dark:bg-lino block md:hidden"></div>
 
-        <!-- Logo flotante -->
-        <div id="badge-caba" title="Arrastrar" class="absolute bottom-6 right-3 sm:bottom-12 sm:right-6 flex h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 cursor-grab select-none items-center justify-center rounded-full bg-crema text-rotulo dark:bg-noche p-3 shadow-2xl active:cursor-grabbing hover:scale-105 transition-transform -rotate-12 z-20 touch-none opacity-85">
-          <img src="img/logocaba.webp" alt="Logo Caba" class="w-full h-auto object-contain pointer-events-none select-none dark:brightness-0 dark:invert animate-wiggle" />
+      </section>
+
+      <!-- Carrusel -->
+      <div class="w-full overflow-hidden bg-crema dark:bg-noche py-3 text-rotulo dark:text-white border-y border-rotulo/20 dark:border-white/20">
+        <div class="animate-marquee whitespace-nowrap font-titulo text-lg sm:text-2xl tracking-[0.2em] uppercase flex">
+          <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+          <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
+          <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
         </div>
       </div>
 
-    </div>
+      <!-- Bagels -->
+      <section id="bagels" class="w-full py-16 px-4 md:px-12 bg-crema dark:bg-noche border-b border-rotulo/10 dark:border-white/10 overflow-hidden">
+        <div class="mx-auto max-w-6xl">
+          <h2 class="text-center font-menu text-[22px] sm:text-2xl md:text-3xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-10 md:mb-14">
+            TIPOS DE BAGELS
+          </h2>
 
-    <!-- Bloque de margen marrón inferior (SOLO MÓVIL) -->
-    <div class="w-full h-40 sm:h-24 bg-rotulo dark:bg-lino block md:hidden"></div>
+          <!-- Contenedor Principal con ID-->
+          <div id="torre-bagels" class="relative flex flex-col items-center justify-center max-w-4xl mx-auto">
+            
+            <!-- Fila 1: Original Bagel -->
+            <div class="z-30 flex items-center justify-center lg:justify-between w-full -mb-10 sm:-mb-12 lg:-mb-14 relative">
+              <div class="w-72 sm:w-80 md:w-96 lg:w-[420px] flex justify-center shrink-0 relative items-center">
+                <img src="img/Bagelnormal.webp" alt="Original Bagel" class="anim-bagel opacity-0 translate-y-16 w-64 sm:w-72 md:w-80 lg:w-[400px] h-auto object-contain drop-shadow-md pointer-events-none transition-all duration-500 ease-out" />
+                <!-- Etiqueta Móvil centrada sobre la imagen -->
+                <span class="anim-etiqueta-movil opacity-0 translate-y-6 absolute lg:hidden pointer-events-none font-menu text-[11px] sm:text-xs font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 text-rotulo dark:text-white px-3 py-1 rounded shadow-md border border-rotulo/15 dark:border-white/15 whitespace-nowrap z-50">ORIGINAL BAGEL</span>
+              </div>
+              <div class="hidden lg:flex items-center gap-6 text-rotulo dark:text-white shrink-0 w-[380px]">
+                <span class="anim-texto opacity-0 -translate-x-10 w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0 transition-all duration-500 ease-out"></span>
+                <span class="anim-texto opacity-0 -translate-x-10 font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight transition-all duration-500 ease-out">ORIGINAL BAGEL</span>
+              </div>
+            </div>
 
-  </section>
+            <!-- Fila 2: Sésamo -->
+            <div class="z-25 flex items-center justify-center lg:justify-between w-full -mb-10 sm:-mb-12 lg:-mb-14 relative">
+              <div class="w-72 sm:w-80 md:w-96 lg:w-[420px] flex justify-center shrink-0 relative items-center">
+                <img src="img/Bageldesésamo.webp" alt="Bagel Sésamo" class="anim-bagel opacity-0 translate-y-16 w-64 sm:w-72 md:w-80 lg:w-[400px] h-auto object-contain drop-shadow-md pointer-events-none transition-all duration-500 ease-out" />
+                <!-- Etiqueta Móvil centrada sobre la imagen -->
+                <span class="anim-etiqueta-movil opacity-0 translate-y-6 absolute lg:hidden pointer-events-none font-menu text-[11px] sm:text-xs font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 text-rotulo dark:text-white px-3 py-1 rounded shadow-md border border-rotulo/15 dark:border-white/15 whitespace-nowrap z-50">SEMILLAS DE SÉSAMO</span>
+              </div>
+              <div class="hidden lg:flex items-center gap-6 text-rotulo dark:text-white shrink-0 w-[380px]">
+                <span class="anim-texto opacity-0 -translate-x-10 w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0 transition-all duration-500 ease-out"></span>
+                <span class="anim-texto opacity-0 -translate-x-10 font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight transition-all duration-500 ease-out">SEMILLAS DE SÉSAMO</span>
+              </div>
+            </div>
 
-  <!-- Carrusel -->
-  <div class="w-full overflow-hidden bg-crema dark:bg-noche py-3 text-rotulo dark:text-white border-y border-rotulo/20 dark:border-white/20">
-    <div class="animate-marquee whitespace-nowrap font-titulo text-lg sm:text-2xl tracking-[0.2em] uppercase flex">
-      <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
-      <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
-      <span class="flex-shrink-0 px-4">100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES 100% NATURALES Y ARTESANALES </span>
-    </div>
-  </div>
+            <!-- Fila 3: Amapola -->
+            <div class="z-20 flex items-center justify-center lg:justify-between w-full -mb-10 sm:-mb-12 lg:-mb-14 relative">
+              <div class="w-72 sm:w-80 md:w-96 lg:w-[420px] flex justify-center shrink-0 relative items-center">
+                <img src="img/Bagelsemillasdeamapola.webp" alt="Bagel Amapola" class="anim-bagel opacity-0 translate-y-16 w-64 sm:w-72 md:w-80 lg:w-[400px] h-auto object-contain drop-shadow-md pointer-events-none transition-all duration-500 ease-out" />
+                <!-- Etiqueta Móvil centrada sobre la imagen -->
+                <span class="anim-etiqueta-movil opacity-0 translate-y-6 absolute lg:hidden pointer-events-none font-menu text-[11px] sm:text-xs font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 text-rotulo dark:text-white px-3 py-1 rounded shadow-md border border-rotulo/15 dark:border-white/15 whitespace-nowrap z-50">SEMILLAS DE AMAPOLA</span>
+              </div>
+              <div class="hidden lg:flex items-center gap-6 text-rotulo dark:text-white shrink-0 w-[380px]">
+                <span class="anim-texto opacity-0 -translate-x-10 w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0 transition-all duration-500 ease-out"></span>
+                <span class="anim-texto opacity-0 -translate-x-10 font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight transition-all duration-500 ease-out">SEMILLAS DE AMAPOLA</span>
+              </div>
+            </div>
 
-<!-- Bagels -->
-  <section id="bagels" class="w-full py-16 px-4 md:px-12 bg-crema dark:bg-noche border-b border-rotulo/10 dark:border-white/10">
-    <div class="mx-auto max-w-6xl">
-      <h2 class="text-center font-menu text-[22px] sm:text-2xl md:text-3xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-6 md:mb-8">
-        TIPOS DE BAGELS
-      </h2>
+            <!-- Fila 4: MixSemillas -->
+            <div class="z-15 flex items-center justify-center lg:justify-between w-full -mb-10 sm:-mb-12 lg:-mb-14 relative">
+              <div class="w-72 sm:w-80 md:w-96 lg:w-[420px] flex justify-center shrink-0 relative items-center">
+                <img src="img/Bagelmixsemillas.webp" alt="Bagel Mix" class="anim-bagel opacity-0 translate-y-16 w-64 sm:w-72 md:w-80 lg:w-[400px] h-auto object-contain drop-shadow-md pointer-events-none transition-all duration-500 ease-out" />
+                <!-- Etiqueta Móvil centrada sobre la imagen -->
+                <span class="anim-etiqueta-movil opacity-0 translate-y-6 absolute lg:hidden pointer-events-none font-menu text-[11px] sm:text-xs font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 text-rotulo dark:text-white px-3 py-1 rounded shadow-md border border-rotulo/15 dark:border-white/15 whitespace-nowrap z-50">SEMILLAS MIX</span>
+              </div>
+              <div class="hidden lg:flex items-center gap-6 text-rotulo dark:text-white shrink-0 w-[380px]">
+                <span class="anim-texto opacity-0 -translate-x-10 w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0 transition-all duration-500 ease-out"></span>
+                <span class="anim-texto opacity-0 -translate-x-10 font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight transition-all duration-500 ease-out">SEMILLAS MIX</span>
+              </div>
+            </div>
 
-      <!-- Bloque principal -->
-      <div class="flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-16 w-full max-w-4xl mx-auto">
+            <!-- Fila 5: Queso Gratinado -->
+            <div class="z-10 flex items-center justify-center lg:justify-between w-full -mb-10 sm:-mb-12 lg:-mb-14 relative">
+              <div class="w-72 sm:w-80 md:w-96 lg:w-[420px] flex justify-center shrink-0 relative items-center">
+                <img src="img/Bageldequeso.webp" alt="Bagel Queso" class="anim-bagel opacity-0 translate-y-16 w-64 sm:w-72 md:w-80 lg:w-[400px] h-auto object-contain drop-shadow-md pointer-events-none transition-all duration-500 ease-out" />
+                <!-- Etiqueta Móvil centrada sobre la imagen -->
+                <span class="anim-etiqueta-movil opacity-0 translate-y-6 absolute lg:hidden pointer-events-none font-menu text-[11px] sm:text-xs font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 text-rotulo dark:text-white px-3 py-1 rounded shadow-md border border-rotulo/15 dark:border-white/15 whitespace-nowrap z-50">QUESO GRATINADO</span>
+              </div>
+              <div class="hidden lg:flex items-center gap-6 text-rotulo dark:text-white shrink-0 w-[380px]">
+                <span class="anim-texto opacity-0 -translate-x-10 w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0 transition-all duration-500 ease-out"></span>
+                <span class="anim-texto opacity-0 -translate-x-10 font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight transition-all duration-500 ease-out">QUESO GRATINADO</span>
+              </div>
+            </div>
 
-        <!-- Marco relativo de la foto -->
-        <div class="relative w-90 sm:w-80 md:w-[420px] lg:w-[500px] flex-shrink-0">
-          
-          <!-- Imagen de la torre -->
-          <img src="img/baglespanes.webp" alt="Torre de Bagels" class="w-full h-auto object-contain drop-shadow-lg opacity-90 lg:opacity-100 block" />
+            <!-- Fila 6: Integral-->
+            <div class="z-5 flex items-center justify-center lg:justify-between w-full relative">
+              <div class="w-72 sm:w-80 md:w-96 lg:w-[420px] flex justify-center shrink-0 relative items-center">
+                <img src="img/Bagelsemillas.webp" alt="Integral Bagel" class="anim-bagel opacity-0 translate-y-16 w-64 sm:w-72 md:w-80 lg:w-[400px] h-auto object-contain drop-shadow-md pointer-events-none transition-all duration-500 ease-out" />
+                <!-- Etiqueta Móvil centrada sobre la imagen -->
+                <span class="anim-etiqueta-movil opacity-0 translate-y-6 absolute lg:hidden pointer-events-none font-menu text-[11px] sm:text-xs font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 text-rotulo dark:text-white px-3 py-1 rounded shadow-md border border-rotulo/15 dark:border-white/15 whitespace-nowrap z-50">INTEGRAL BAGEL</span>
+              </div>
+              <div class="hidden lg:flex items-center gap-6 text-rotulo dark:text-white shrink-0 w-[380px]">
+                <span class="anim-texto opacity-0 -translate-x-10 w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0 transition-all duration-500 ease-out"></span>
+                <span class="anim-texto opacity-0 -translate-x-10 font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight transition-all duration-500 ease-out">INTEGRAL BAGEL</span>
+              </div>
+            </div>
 
-          <!-- Lista en MÓVIL: Flotando sobre la foto MÁS JUNTOS -->
-    <div class="absolute inset-0 flex lg:hidden flex-col justify-center items-center gap-10 sm:gap-2.5 py-1 px-2 text-rotulo dark:text-white z-10 pointer-events-none">
-
-     <div class="flex items-center justify-center" data-aos="fade-up" data-aos-delay="100">
-     <span class="font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest text-center leading-none bg-crema/90 dark:bg-noche/90 px-2 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10">ORIGINAL BAGEL</span>
-     </div>
-
-     <div class="flex items-center justify-center" data-aos="fade-up" data-aos-delay="200">
-     <span class="font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest text-center leading-none bg-crema/90 dark:bg-noche/90 px-2 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10">SEMILLAS DE SÉSAMO</span>
-     </div>
-
-     <div class="flex items-center justify-center" data-aos="fade-up" data-aos-delay="300">
-      <span class="font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest text-center leading-none bg-crema/90 dark:bg-noche/90 px-2 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10">SEMILLAS DE AMAPOLA</span>
-     </div>
-
-     <div class="flex items-center justify-center" data-aos="fade-up" data-aos-delay="400">
-     <span class="font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest text-center leading-none bg-crema/90 dark:bg-noche/90 px-2 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10">SEMILLAS MIX</span>
-     </div>
-
-     <div class="flex items-center justify-center" data-aos="fade-up" data-aos-delay="500">
-      <span class="font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest text-center leading-none bg-crema/90 dark:bg-noche/90 px-2 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10">QUESO GRATINADO</span>
-    </div>
-
-     <div class="flex items-center justify-center" data-aos="fade-up" data-aos-delay="600">
-     <span class="font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest text-center leading-none bg-crema/90 dark:bg-noche/90 px-2 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10">INTEGRAL BAGEL</span>
-     </div>
-
-   </div>
+            <!-- Etiquetas flotantes en móvil -->
+            <div class="absolute inset-0 flex lg:hidden flex-col justify-between items-center py-4 px-2 text-rotulo dark:text-white z-40 pointer-events-none">
+              <span class="anim-etiqueta-movil opacity-0 translate-y-6 font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 px-2.5 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10 transition-all duration-500 ease-out">ORIGINAL BAGEL</span>
+              <span class="anim-etiqueta-movil opacity-0 translate-y-6 font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 px-2.5 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10 transition-all duration-500 ease-out">SEMILLAS DE SÉSAMO</span>
+              <span class="anim-etiqueta-movil opacity-0 translate-y-6 font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 px-2.5 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10 transition-all duration-500 ease-out">SEMILLAS DE AMAPOLA</span>
+              <span class="anim-etiqueta-movil opacity-0 translate-y-6 font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 px-2.5 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10 transition-all duration-500 ease-out">SEMILLAS MIX</span>
+              <span class="anim-etiqueta-movil opacity-0 translate-y-6 font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 px-2.5 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10 transition-all duration-500 ease-out">QUESO GRATINADO</span>
+              <span class="anim-etiqueta-movil opacity-0 translate-y-6 font-menu text-[11px] sm:text-sm font-extrabold uppercase tracking-widest bg-crema/90 dark:bg-noche/90 px-2.5 py-1 rounded shadow-md border border-rotulo/10 dark:border-white/10 transition-all duration-500 ease-out">INTEGRAL BAGEL</span>
+            </div>
+          </div>
         </div>
-
-        <!-- Lista en ORDENADOR: A la derecha con sus líneas conectoras -->
-          <div class="hidden lg:flex flex-col justify-between space-y-12 text-rotulo dark:text-white transition-colors duration-500">
-
-  <div class="flex items-center gap-6" data-aos="fade-left" data-aos-delay="100">
-    <span class="w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0"></span>
-    <span class="font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight">ORIGINAL BAGEL</span>
-  </div>
-
-  <div class="flex items-center gap-6" data-aos="fade-left" data-aos-delay="200">
-    <span class="w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0"></span>
-    <span class="font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight">SEMILLAS DE SÉSAMO</span>
-  </div>
-
-  <div class="flex items-center gap-6" data-aos="fade-left" data-aos-delay="300">
-    <span class="w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0"></span>
-    <span class="font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight">SEMILLAS DE AMAPOLA</span>
-  </div>
-
-  <div class="flex items-center gap-6" data-aos="fade-left" data-aos-delay="400">
-    <span class="w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0"></span>
-    <span class="font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight">SEMILLAS MIX</span>
-  </div>
-
-  <div class="flex items-center gap-6" data-aos="fade-left" data-aos-delay="500">
-    <span class="w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0"></span>
-    <span class="font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight">QUESO GRATINADO</span>
-  </div>
-
-  <div class="flex items-center gap-6" data-aos="fade-left" data-aos-delay="600">
-    <span class="w-16 h-[2px] bg-rotulo/40 dark:bg-white/40 shrink-0"></span>
-    <span class="font-menu text-2xl font-bold uppercase tracking-widest whitespace-nowrap leading-tight">INTEGRAL BAGEL</span>
-  </div>
-
-      </div>
-
-      </div>
-
-    </div>
-  </section>
+      </section>
                 
 
-  <!-- Rellenos -->
-  <section id="rellenos" class="bg-rotulo dark:bg-lino py-16 md:py-20 text-crema dark:text-noche select-none">
-      <div class="mx-auto max-w-6xl px-6">
+      <!-- Rellenos -->
+      <section id="rellenos" class="bg-rotulo dark:bg-lino py-16 md:py-20 text-crema dark:text-noche select-none">
+        <div class="mx-auto max-w-6xl px-6">
           <h2 class="text-center font-menu text-[22px] sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold mb-10 md:mb-12">
-              TIPOS DE RELLENOS
+            TIPOS DE RELLENOS
           </h2>
 
           <!-- Grid: 1 columna en móvil, 2 en tablet y 3 en ordenador -->
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-              
-              <!-- Relleno 1: Plátano -->
-              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                  <img src="img/bagleplatano.webp" alt="Bagel de Plátano" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                          Queso crema, rodajas de plátano fresco, miel pura de azahar y un toque de canela.
-                      </p>
-                  </div>
-              </div>
+                  
+            <!-- Relleno 1: Plátano -->
+            <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                <img src="img/bagleplatano.webp" alt="Bagel de Plátano" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                        Queso crema, rodajas de plátano fresco, miel pura de azahar y un toque de canela.
+                    </p>
+                </div>
+            </div>
 
-              <!-- Relleno 2: Verduras / Pesto -->
-              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                  <img src="img/bagleverduras.webp" alt="Bagel de Verduras" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                          Tomates cherry asados, pesto fresco de albahaca, queso feta y brotes verdes.
-                      </p>
-                  </div>
-              </div>
+            <!-- Relleno 2: Verduras / Pesto -->
+            <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                <img src="img/bagleverduras.webp" alt="Bagel de Verduras" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                        Tomates cherry asados, pesto fresco de albahaca, queso feta y brotes verdes.
+                    </p>
+                </div>
+            </div>
 
-              <!-- Relleno 3: Mermelada -->
-              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                  <img src="img/baglemermelada.webp" alt="Bagel de Mermelada" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                          Base de cream cheese artesanal y mermelada casera de frutos rojos.
-                      </p>
-                  </div>
-              </div>
+            <!-- Relleno 3: Mermelada -->
+            <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                <img src="img/baglemermelada.webp" alt="Bagel de Mermelada" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                        Base de cream cheese artesanal y mermelada casera de frutos rojos.
+                    </p>
+                </div>
+            </div>
 
-              <!-- Relleno 4: Jamón y Queso -->
-              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                  <img src="img/baglejamonqueso.webp" alt="Bagel de Jamón y Queso" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                          Jamón ahumado, queso havarti gratinado, mantequilla de hierbas y orégano.
-                      </p>
-                  </div>
-              </div>
+            <!-- Relleno 4: Jamón y Queso -->
+            <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                <img src="img/baglejamonqueso.webp" alt="Bagel de Jamón y Queso" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                        Jamón ahumado, queso havarti gratinado, mantequilla de hierbas y orégano.
+                    </p>
+                </div>
+            </div>
 
-              <!-- Relleno 5: Carbonara -->
-              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                  <img src="img/baglecarbonara.webp" alt="Bagel Carbonara" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                          Guanciale crujiente, crema de yema de huevo, queso pecorino y pimienta negra.
-                      </p>
-                  </div>
-              </div>
+            <!-- Relleno 5: Carbonara -->
+            <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                <img src="img/baglecarbonara.webp" alt="Bagel Carbonara" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                        Guanciale crujiente, crema de yema de huevo, queso pecorino y pimienta negra.
+                    </p>
+                </div>
+            </div>
 
-              <!-- Relleno 6: Atún -->
-              <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
-                  <img src="img/bagleatun.webp" alt="Bagel de Atún" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
-                  <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
-                          Atún claro, mayonesa casera, cebolla morada picada y cebollino fresco.
-                      </p>
-                  </div>
-              </div>
-
+            <!-- Relleno 6: Atún -->
+            <div role="button" tabindex="0" aria-pressed="false" class="bagel-card group relative w-full max-w-[280px] overflow-hidden rounded-lg cursor-pointer">
+                <img src="img/bagleatun.webp" alt="Bagel de Atún" class="w-full h-auto object-contain rounded-lg transition-all duration-300 group-hover:brightness-40" />
+                <div class="bagel-overlay absolute inset-0 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <p class="font-menu text-sm sm:text-base md:text-lg text-white font-semibold leading-relaxed drop-shadow-md">
+                        Atún claro, mayonesa casera, cebolla morada picada y cebollino fresco.
+                    </p>
+                </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <!-- WIDGET FLOTANTE (Esquina inferior izquierda) -->
+      <div class="fixed bottom-6 left-6 z-50 font-menu">
+        <a 
+          id="btn-novedad-flotante"
+          href="#bloque-novedad" 
+          class="inline-block bg-rosa-caba text-rotulo font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-rosa-hover hover:scale-105 transition-all duration-500 cursor-pointer animate-bounce"
+        >
+          ¡ NUEVA NOVEDAD !
+        </a>
       </div>
-  </section>
 
-<!-- WIDGET FLOTANTE (Esquina inferior izquierda) -->
-  <div class="fixed bottom-6 left-6 z-50 font-menu">
-    <a 
-      id="btn-novedad-flotante"
-      href="#bloque-novedad" 
-      class="inline-block bg-rosa-caba text-rotulo font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-lg hover:bg-rosa-hover hover:scale-105 transition-all duration-500 cursor-pointer animate-bounce"
-    >
-      ¡ NUEVA NOVEDAD !
-    </a>
-  </div>
-
-  <!-- SECCIÓN NOVEDAD (Justo después del </section> de #rellenos) -->
-  <section id="bloque-novedad" class="w-full py-16 px-4 md:px-12 bg-papel dark:bg-[#230A0A] border-b border-rotulo/10 dark:border-white/10 overflow-hidden">
-    <div class="mx-auto max-w-4xl">
-      
-      <!-- Tarjeta que se expande al scrollear -->
-      <div 
-        id="tarjeta-novedad-expandible" 
-        class="relative bg-crema dark:bg-noche border-2 border-rosa-caba rounded-3xl p-6 sm:p-10 transition-all duration-700 ease-out transform scale-90 opacity-40"
-      >
-        <span class="bg-rosa-caba text-rotulo font-menu text-[10px] sm:text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm inline-block mb-4">
-          ¡NUEVA NOVEDAD!
-        </span>
-
-        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+      <!-- SECCIÓN NOVEDAD -->
+      <section id="bloque-novedad" class="w-full py-16 px-4 md:px-12 bg-[#F8EFEA] dark:bg-[#230A0A] border-b border-rotulo/10 dark:border-white/10 overflow-hidden">
+        <div class="mx-auto max-w-4xl">
           
-          <div class="w-full md:w-2/3 text-center md:text-left space-y-3">
-            <h3 class="font-menu text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-wider text-rotulo dark:text-white leading-tight">
-              ¡Llegaron los Bagels <span class="text-rosa-hover underline decoration-rosa-caba">Sin Gluten</span>!
-            </h3>
-            <p class="font-texto text-xs sm:text-sm leading-relaxed text-rotulo/90 dark:text-crema/90">
-              Misma esponjosidad, mismo sabor artesano de siempre, pero ahora elaborados en un obrador adaptado y 100% libre de gluten. ¡Ven a probarlos esta semana!
-            </p>
+          <!-- Tarjeta Novedad (Transiciones filtradas para evitar saltos en modo oscuro) -->
+          <div 
+            id="tarjeta-novedad-expandible" 
+            class="relative bg-crema dark:bg-noche border-2 border-rosa-caba rounded-3xl p-6 sm:p-10 transition-transform transition-opacity duration-700 ease-out transform scale-90 opacity-40">
+            <span class="bg-rosa-caba text-rotulo font-menu text-[10px] sm:text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm inline-block mb-4">
+              ¡NUEVA NOVEDAD!
+            </span>
+
+            <!-- Contenedor Flex: Imagen a la izquierda + Texto + Botón -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+              
+              <!-- Imagen del Bagel Sin Gluten (Izquierda) -->
+              <div class="w-full md:w-1/3 flex justify-center shrink-0">
+                <img 
+                  src="img/bagelsingluten.webp" 
+                  alt="Bagel Sin Gluten" 
+                  class="w-48 sm:w-56 md:w-full h-auto object-contain drop-shadow-md pointer-events-none"/>
+              </div>
+
+              <!-- Bloque de Texto (Centro) -->
+              <div class="w-full md:w-1/2 text-center md:text-left space-y-3">
+                <h3 class="font-menu text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-wider text-rotulo dark:text-white leading-tight">
+                  ¡Llegaron los Bagels <span class="text-rosa-hover underline decoration-rosa-caba">Sin Gluten</span>!
+                </h3>
+                <p class="font-texto text-xs sm:text-sm leading-relaxed text-rotulo/90 dark:text-crema/90">
+                  Misma esponjosidad, mismo sabor artesano de siempre, pero ahora elaborados en un obrador adaptado y 100% libre de gluten. ¡Ven a probarlos esta semana!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOSOTROS -->
+      <section id="nosotros" class="py-16 md:py-24 max-w-6xl mx-auto px-6 font-texto text-texto">
+        <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-12">
+          Nosotros
+        </h2>
+
+        <!-- El contenedor envuelve AHORA SÍ a la foto y al texto -->
+        <div class="flex flex-col sm:flex-row items-start justify-between gap-6 md:gap-10 w-full">
+            
+          <!-- Caja de la foto -->
+          <div class="w-full sm:w-[38%] flex-shrink-0 overflow-hidden rounded-sm">
+            <img src="img/masa.webp" alt="Amasando bagels a mano" class="w-full h-[260px] sm:h-[320px] md:h-[380px] object-cover object-center shadow-sm"/>
           </div>
 
-          <div class="w-full md:w-1/3 flex justify-center md:justify-end">
-            <a href="#visitanos" class="bg-rosa-caba hover:bg-rosa-hover text-rotulo font-menu text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:scale-105">
-              Probar Ahora
+          <!-- Caja del texto -->
+          <div class="w-full sm:w-[58%] flex flex-col space-y-4 text-left">
+          
+            <!-- Subtítulo -->
+            <h3 class="font-menu text-lg md:text-xl font-bold tracking-tight text-texto dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
+              Bagels hechos a mano, con ingredientes naturales
+            </h3>
+            
+            <!-- Párrafo 1 -->
+            <p class="text-sm md:text-base leading-relaxed opacity-90 dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
+              Todo empezó con una idea sencilla: hacer bagels de verdad. De los que se amasan a mano, fermentan con calma y se hierven antes de entrar al horno, como se han hecho siempre.
+            </p>
+
+            <!-- Párrafo 2 -->
+            <p class="text-sm md:text-base leading-relaxed opacity-90 dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
+              Por eso nuestra masa lleva pocos ingredientes y todos naturales: harina, agua, sal y levadura. Sin aditivos, sin conservantes y sin masas industriales. Cada día elaboramos pequeñas tandas para que lleguen a tu mesa recién horneados, con esa corteza dorada y ese interior tierno que los hace inconfundibles.
+            </p>
+
+            <!-- Párrafo 3 -->
+            <p class="text-sm md:text-base leading-relaxed opacity-90 dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
+              Con los rellenos seguimos la misma filosofía: producto fresco, de temporada y bien combinado. Pocas opciones, pero pensadas y cuidadas hasta el último detalle.Creemos que lo natural y lo hecho a mano se nota en cada bocado. Y que cuando se trabaja sin prisas, el resultado habla por sí solo.
+            </p>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO DE BORDE A BORDE -->
+      <div class="w-full overflow-hidden my-12 md:my-16">
+        <img src="img/fotosbagelfinal.webp"alt="Bandeja de bagels recién horneados" class="w-full h-[350px] sm:h-[450px] md:h-[600px] object-cover object-center"/>
+      </div>
+
+      <!-- CONTACTO / VISÍTANOS -->
+      <section id="visitanos" class="py-16 md:py-24 max-w-3xl mx-auto px-5 text-center font-texto text-texto space-y-10">
+          
+        <!-- Bloque 1: Dirección y Horarios -->
+        <div class="space-y-3">
+          <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-8">
+            Ven y llévate tus bagels recién hechos.
+          </h2>
+            
+          <div class="space-y-1 text-sm md:text-base">
+            <p class="text-suave dark:text-white/80">Calle del Horno Viejo 14, Madrid</p>
+            <p class="text-suave dark:text-white/80">Abierto de martes a domingo, de 09:00 a 19:00</p>
+            <p class="text-suave dark:text-white/80">Teléfono: +34 879 345 678</p>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Pedidos y Encargos -->
+        <div class="space-y-3 pt-4">
+          <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-8">
+            Pedidos y encargos
+          </h2>
+            
+          <p class="text-sm md:text-base text-suave dark:text-white/80 max-w-lg mx-auto leading-relaxed">
+            ¿Quieres reservar tus bagels o hacer un pedido para un evento? Llámanos o escríbenos y te lo preparamos.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- SECCIÓN NEWSLETTER -->
+      <section class="bg-rotulo dark:bg-lino py-12 px-6 font-texto text-crema dark:text-white border-b border-crema/10 dark:border-white/10">
+        <div class="max-w-md mx-auto space-y-5">
+          
+          <!-- Texto descriptivo -->
+          <p class="text-base md:text-lg font-normal leading-tight text-center md:text-center tracking-wide">
+            Suscríbete a nuestra newsletter y entérate de todas las novedades
+          </p>
+
+          <!-- Formulario -->
+          <form id="form-newsletter" class="space-y-4">
+            
+            <!-- Campo de correo -->
+            <div>
+              <input 
+                type="email" 
+                id="email-newsletter"
+                placeholder="Tu email" 
+                required 
+                class="w-full px-4 py-3.5 bg-transparent border border-crema/80 dark:border-white/80 rounded-xl text-crema dark:text-white placeholder-texto-claro/60 focus:outline-none focus:ring-2 focus:ring-texto-claro transition-all"
+              />
+            </div>
+
+            <!-- Botón -->
+            <button 
+              type="submit" 
+              class="w-full py-3.5 bg-rosa-caba text-rotulo dark:text-noche font-menu font-bold tracking-widest uppercase rounded-xl hover:opacity-70 transition-opacity cursor-pointer">
+              Suscribirme
+            </button>
+
+          </form>
+
+          <!-- Mensaje de confirmación  -->
+          <div id="mensaje-newsletter" class="hidden p-4 bg-crema/20 dark:bg-white/20 border border-rosa-caba text-crema dark:text-white text-center text-sm font-menu rounded-xl animate-fade-in">
+            ¡Gracias por suscribirte! Te hemos enviado un correo de confirmación.
+          </div>
+
+        </div>
+      </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-rotulo dark:bg-noche py-8 px-5 md:py-10 md:px-12 text-crema dark:text-white font-texto relative z-10">
+      <div class="max-w-[1400px] mx-auto">
+      
+        <!-- ESCRITORIO -->
+        <div class="hidden md:block space-y-6">
+          
+          <!-- Logo a la izquierda e Iconos a la derecha -->
+          <div class="flex items-center justify-between">
+            <img 
+              src="img/logoblanco.webp" 
+              alt="Logo Caba" 
+              class="h-20 w-auto object-contain brightness-0 invert" 
+            />
+            
+            <div class="flex gap-x-5 items-center text-2xl">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Fila 2: Copyright y Políticas con modales -->
+          <div class="flex items-center justify-between text-[12px] tracking-wider pt-2 border-t border-crema/10 dark:border-white/10">
+            <p class="tracking-widest">
+              © 2026 Caba. Todos los derechos reservados.
+            </p>
+            <div class="flex gap-x-2 font-normal">
+              <button type="button" onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" class="hover:underline cursor-pointer">Política de privacidad</button>
+              <span class="opacity-70">|</span>
+              <button type="button" onclick="document.getElementById('modal-terminos').classList.remove('hidden')" class="hover:underline cursor-pointer">Términos y condiciones</button>
+            </div>
+          </div>
+
+        </div>
+
+      <!-- MÓVIL-->
+      <div class="block md:hidden">
+        
+        <div class="flex items-center justify-between mb-8">
+          <img 
+            src="img/logoblanco.webp"
+            alt="Logo Caba" 
+            class="h-16 w-auto object-contain brightness-0 invert" />
+          <div class="flex gap-x-5 items-center text-2xl">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
+              <i class="fa-brands fa-instagram"></i>
             </a>
           </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-    <!-- NOSOTROS -->
-
-    <section id="nosotros" class="py-16 md:py-24 max-w-6xl mx-auto px-6 font-texto text-texto">
-      <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-12">
-        Nosotros
-      </h2>
-
-      <!-- El contenedor envuelve AHORA SÍ a la foto y al texto -->
-      <div class="flex flex-col sm:flex-row items-start justify-between gap-6 md:gap-10 w-full">
-        
-        <!-- Caja de la foto -->
-        <div class="w-full sm:w-[38%] flex-shrink-0 overflow-hidden rounded-sm">
-          <img src="img/masa.webp" alt="Amasando bagels a mano" class="w-full h-[260px] sm:h-[320px] md:h-[380px] object-cover object-center shadow-sm"/>
         </div>
 
-        <!-- Caja del texto -->
-        <div class="w-full sm:w-[58%] flex flex-col space-y-4 text-left">
-      
-      <!-- Subtítulo -->
-      <h3 class="font-menu text-lg md:text-xl font-bold tracking-tight text-texto dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
-        Bagels hechos a mano, con ingredientes naturales
-      </h3>
-      
-      <!-- Párrafo 1 -->
-      <p class="text-sm md:text-base leading-relaxed opacity-90 dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
-        Todo empezó con una idea sencilla: hacer bagels de verdad. De los que se amasan a mano, fermentan con calma y se hierven antes de entrar al horno, como se han hecho siempre.
-      </p>
-
-      <!-- Párrafo 2 -->
-      <p class="text-sm md:text-base leading-relaxed opacity-90 dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
-        Por eso nuestra masa lleva pocos ingredientes y todos naturales: harina, agua, sal y levadura. Sin aditivos, sin conservantes y sin masas industriales. Cada día elaboramos pequeñas tandas para que lleguen a tu mesa recién horneados, con esa corteza dorada y ese interior tierno que los hace inconfundibles.
-      </p>
-
-      <!-- Párrafo 3 -->
-      <p class="text-sm md:text-base leading-relaxed opacity-90 dark:text-white" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
-        Con los rellenos seguimos la misma filosofía: producto fresco, de temporada y bien combinado. Pocas opciones, pero pensadas y cuidadas hasta el último detalle. Creemos que lo natural y lo hecho a mano se nota en cada bocado. Y que cuando se trabaja sin prisas, el resultado habla por sí solo.
-      </p>
-
-    </div>
-
-      </div>
-    </section>
-
-        <!-- FOTO DE BORDE A BORDE -->
-    <div class="w-full overflow-hidden my-12 md:my-16">
-      <img 
-        src="img/fotosbagelfinal.webp"alt="Bandeja de bagels recién horneados" class="w-full h-[350px] sm:h-[450px] md:h-[600px] object-cover object-center"/>
-    </div>
-
-        <!-- CONTACTO / VISÍTANOS -->
-    <section id="visitanos" class="py-16 md:py-24 max-w-3xl mx-auto px-5 text-center font-texto text-texto space-y-10">
-      
-      <!-- Bloque 1: Dirección y Horarios -->
-      <div class="space-y-3">
-        <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-8">
-          Ven y llévate tus bagels recién hechos.
-        </h2>
-        
-        <div class="space-y-1 text-sm md:text-base">
-          <p class="text-suave dark:text-white/80">Calle del Horno Viejo 14, Madrid</p>
-          <p class="text-suave dark:text-white/80">Abierto de martes a domingo, de 09:00 a 19:00</p>
-          <p class="text-suave dark:text-white/80">Teléfono: +34 879 345 678</p>
+        <!-- Fila 2: Textos inferiores-->
+        <div class="flex w-full gap-x-6 items-start pt-4 border-t border-crema/10 dark:border-white/10">
+          <p class="text-[11px] w-1/2 leading-relaxed tracking-wider font-normal">
+            © 2026 Caba. Todos los derechos reservados.
+          </p>
+          <div class="text-[11px] w-1/2 flex flex-col items-end leading-relaxed tracking-wider font-normal text-right space-y-1">
+            <button 
+              type="button" 
+              onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" 
+              class="hover:underline text-right py-1 cursor-pointer touch-manipulation">
+              Política de privacidad
+            </button>
+            <button 
+              type="button" 
+              onclick="document.getElementById('modal-terminos').classList.remove('hidden')" 
+              class="hover:underline text-right py-1 cursor-pointer touch-manipulation">
+              Términos y condiciones
+            </button>
+          </div>
         </div>
       </div>
+    </footer>
 
-      <!-- Bloque 2: Pedidos y Encargos -->
-      <div class="space-y-3 pt-4">
-        <h2 class="text-center font-menu text-xl sm:text-2xl uppercase tracking-[0.3em] text-rotulo dark:text-white font-bold mb-8">
-          Pedidos y encargos
-        </h2>
-        
-        <p class="text-sm md:text-base text-suave dark:text-white/80 max-w-lg mx-auto leading-relaxed">
-          ¿Quieres reservar tus bagels o hacer un pedido para un evento? Llámanos o escríbenos y te lo preparamos.
-        </p>
-      </div>
-
-    </section>
-
-  <!-- SECCIÓN NEWSLETTER -->
-  <section class="bg-rotulo dark:bg-lino py-12 px-6 font-texto text-crema dark:text-white border-b border-crema/10 dark:border-white/10">
-    <div class="max-w-md mx-auto space-y-5">
-      
-      <!-- Texto descriptivo -->
-      <p class="text-base md:text-lg font-normal leading-tight text-center md:text-center tracking-wide">
-        Suscríbete a nuestra newsletter y entérate de todas las novedades
-      </p>
-
-      <!-- Formulario -->
-      <form id="form-newsletter" class="space-y-4">
-        
-        <!-- Campo de correo -->
-        <div>
-          <input 
-            type="email" 
-            id="email-newsletter"
-            placeholder="Tu email" 
-            required 
-            class="w-full px-4 py-3.5 bg-transparent border border-crema/80 dark:border-white/80 rounded-xl text-crema dark:text-white placeholder-texto-claro/60 focus:outline-none focus:ring-2 focus:ring-texto-claro transition-all"
-          />
-        </div>
-
-        <!-- Botón -->
-        <button 
-          type="submit" 
-          class="w-full py-3.5 bg-rosa-caba text-rotulo dark:text-noche font-menu font-bold tracking-widest uppercase rounded-xl hover:opacity-70 transition-opacity cursor-pointer">
-          Suscribirme
-        </button>
-
-      </form>
-
-      <!-- Mensaje de confirmación (oculto por defecto) -->
-      <div 
-        id="mensaje-newsletter" 
-        class="hidden p-4 bg-crema/20 dark:bg-white/20 border border-rosa-caba text-crema dark:text-white text-center text-sm font-menu rounded-xl animate-fade-in"
-      >
-        ¡Gracias por suscribirte! Te hemos enviado un correo de confirmación.
-      </div>
-
-    </div>
-  </section>
-
-
-</main>
-
-<!-- FOOTER -->
-<footer class="bg-rotulo dark:bg-noche py-8 px-5 md:py-10 md:px-12 text-crema dark:text-white font-texto relative z-10">
-  <div class="max-w-[1400px] mx-auto">
-  
-    <!-- ESCRITORIO -->
-    <div class="hidden md:block space-y-6">
-      
-      <!-- Logo a la izquierda e Iconos a la derecha -->
-      <div class="flex items-center justify-between">
-        <img 
-          src="img/logoblanco.webp" 
-          alt="Logo Caba" 
-          class="h-20 w-auto object-contain brightness-0 invert" 
-        />
-        
-        <div class="flex gap-x-5 items-center text-2xl">
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+    <!-- Modal Política de Privacidad -->
+    <div id="modal-privacidad" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+      <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
+        <button type="button" onclick="document.getElementById('modal-privacidad').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
+        <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Política de Privacidad</h3>
+        <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
+          <p>En <strong>Caba - Bagels Artesanales</strong> respetamos tu privacidad. Los datos recopilados (como tu correo electrónico en la newsletter) se utilizan únicamente para enviarte novedades y promociones de nuestro obrador.</p>
+          <p>No compartimos ni vendemos tu información a terceros. Puedes darte de baja en cualquier momento poniéndote en contacto con nosotros.</p>
         </div>
       </div>
+    </div>
 
-      <!-- Fila 2: Copyright y Políticas con modales -->
-      <div class="flex items-center justify-between text-[12px] tracking-wider pt-2 border-t border-crema/10 dark:border-white/10">
-        <p class="tracking-widest">
-          © 2026 Caba. Todos los derechos reservados.
-        </p>
-        <div class="flex gap-x-2 font-normal">
-          <button type="button" onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" class="hover:underline cursor-pointer">Política de privacidad</button>
-          <span class="opacity-70">|</span>
-          <button type="button" onclick="document.getElementById('modal-terminos').classList.remove('hidden')" class="hover:underline cursor-pointer">Términos y condiciones</button>
+    <!-- Modal Términos y Condiciones -->
+    <div id="modal-terminos" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+      <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
+        <button type="button" onclick="document.getElementById('modal-terminos').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
+        <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Términos y Condiciones</h3>
+        <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
+          <p>Al navegar por esta web aceptas disfrutar de nuestros bagels elaborados artesanalmente con ingredientes 100% naturales.</p>
+          <p>Los precios y la disponibilidad de los productos pueden variar según la temporada y existencias en tienda física.</p>
         </div>
       </div>
-
     </div>
-
-    <!-- MÓVIL (Misma estructura visual, abriendo modales) -->
-    <div class="block md:hidden">
-      
-      <div class="flex items-center justify-between mb-8">
-        <img 
-          src="img/logoblanco.webp"
-          alt="Logo Caba" 
-          class="h-16 w-auto object-contain brightness-0 invert" 
-        />
-        <div class="flex gap-x-5 items-center text-2xl">
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition-opacity">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition-opacity">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Fila 2: Textos inferiores (Tu maquetación exacta + Modales activados) -->
-      <div class="flex w-full gap-x-6 items-start pt-4 border-t border-crema/10 dark:border-white/10">
-        <p class="text-[11px] w-1/2 leading-relaxed tracking-wider font-normal">
-          © 2026 Caba. Todos los derechos reservados.
-        </p>
-        <div class="text-[11px] w-1/2 flex flex-col items-end leading-relaxed tracking-wider font-normal text-right space-y-1">
-          <button 
-            type="button" 
-            onclick="document.getElementById('modal-privacidad').classList.remove('hidden')" 
-            class="hover:underline text-right py-1 cursor-pointer touch-manipulation"
-          >
-            Política de privacidad
-          </button>
-          <button 
-            type="button" 
-            onclick="document.getElementById('modal-terminos').classList.remove('hidden')" 
-            class="hover:underline text-right py-1 cursor-pointer touch-manipulation"
-          >
-            Términos y condiciones
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</footer>
-
-<!-- Modal Política de Privacidad -->
-<div id="modal-privacidad" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-  <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
-    <button type="button" onclick="document.getElementById('modal-privacidad').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
-    <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Política de Privacidad</h3>
-    <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
-      <p>En <strong>Caba - Bagels Artesanales</strong> respetamos tu privacidad. Los datos recopilados (como tu correo electrónico en la newsletter) se utilizan únicamente para enviarte novedades y promociones de nuestro obrador.</p>
-      <p>No compartimos ni vendemos tu información a terceros. Puedes darte de baja en cualquier momento poniéndote en contacto con nosotros.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Términos y Condiciones -->
-<div id="modal-terminos" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-  <div class="bg-crema dark:bg-noche text-rotulo dark:text-white w-full max-w-md p-6 rounded-2xl shadow-2xl relative border border-rotulo/20 dark:border-white/20 space-y-4">
-    <button type="button" onclick="document.getElementById('modal-terminos').classList.add('hidden')" class="absolute top-4 right-4 text-xl font-bold hover:opacity-70 cursor-pointer">✕</button>
-    <h3 class="font-menu text-lg font-bold uppercase tracking-wider">Términos y Condiciones</h3>
-    <div class="text-xs space-y-2 leading-relaxed opacity-90 max-h-60 overflow-y-auto pr-2">
-      <p>Al navegar por esta web aceptas disfrutar de nuestros bagels elaborados artesanalmente con ingredientes 100% naturales.</p>
-      <p>Los precios y la disponibilidad de los productos pueden variar según la temporada y existencias en tienda física.</p>
-    </div>
-  </div>
-</div>
 
     <!-- ===== NUESTRO JAVASCRIPT ===== -->
     <script src="js/interfaz.js"></script>

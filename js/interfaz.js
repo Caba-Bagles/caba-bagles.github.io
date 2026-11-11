@@ -1,6 +1,4 @@
-// ==========================================
 // 1. CONTROL DE MODO OSCURO (PERSISTENTE)
-// ==========================================
 const btnTheme = document.getElementById('toggle-theme');
 const iconoTema = document.getElementById('icono-tema');
 const htmlElement = document.documentElement;
@@ -28,15 +26,24 @@ if (btnTheme) {
     });
 }
 
-// ==========================================
+
 // 2. MENÚ MÓVIL RESPONSIVE
-// ==========================================
 const botonMenu = document.getElementById('boton-menu');
 const menuNavegacion = document.getElementById('menu');
 const enlacesMenu = document.querySelectorAll('.enlace-menu');
 
 if (botonMenu && menuNavegacion) {
-    botonMenu.addEventListener('click', () => {
+    // Función auxiliar para cerrar el menú de forma limpia
+    const cerrarMenu = () => {
+        menuNavegacion.classList.add('hidden');
+        menuNavegacion.classList.remove('flex');
+        botonMenu.setAttribute('aria-expanded', 'false');
+        botonMenu.setAttribute('aria-label', 'Abrir menú');
+    };
+
+    // Toggle al hacer click en el botón hamburguesa
+    botonMenu.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que el evento se propague inmediatamente al document
         menuNavegacion.classList.toggle('hidden');
         menuNavegacion.classList.toggle('flex');
         const menuAbierto = !menuNavegacion.classList.contains('hidden');
@@ -44,19 +51,24 @@ if (botonMenu && menuNavegacion) {
         botonMenu.setAttribute('aria-label', menuAbierto ? 'Cerrar menú' : 'Abrir menú');
     });
 
+    // Cierre al pulsar cualquier enlace del menú
     enlacesMenu.forEach(enlace => {
-        enlace.addEventListener('click', () => {
-            menuNavegacion.classList.add('hidden');
-            menuNavegacion.classList.remove('flex');
-            botonMenu.setAttribute('aria-expanded', 'false');
-            botonMenu.setAttribute('aria-label', 'Abrir menú');
-        });
+        enlace.addEventListener('click', cerrarMenu);
+    });
+
+    // CIERRE AL TOCAR FUERA (Click / Tap en móvil)
+    document.addEventListener('click', (e) => {
+        const menuAbierto = !menuNavegacion.classList.contains('hidden');
+        
+        // Si el menú está abierto y el clic NO fue dentro del menú ni en el botón hamburguesa
+        if (menuAbierto && !menuNavegacion.contains(e.target) && !botonMenu.contains(e.target)) {
+            cerrarMenu();
+        }
     });
 }
 
-// ==========================================
+
 // 3. RELLENOS: ACCESIBILIDAD Y TOQUE MÓVIL
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.bagel-card').forEach(card => {
         // En Móvil (táctil): El tap fija la tarjeta. En PC lo ignora por completo
@@ -101,9 +113,8 @@ function toggleBagel(element) {
     }
 }
 
-// ==========================================
+
 // 4. ARRASTRAR LOGO FLOTANTE (RATÓN Y TÁCTIL)
-// ==========================================
 const badge = document.getElementById('badge-caba');
 const contenedorHero = document.getElementById('contenedor-hero-img');
 
@@ -164,9 +175,8 @@ if (badge && contenedorHero) {
     window.addEventListener('touchend', stopDrag);
 }
 
-// ==========================================
+
 // 5. INICIALIZACIÓN DE LIBRERÍAS
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     // Typed.js
     const typedElement = document.getElementById('typed-hero');
@@ -182,18 +192,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // AOS.js
+// AOS.js configurado para que la torre esté bien centrada antes del primer PUM
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800,
-            once: true
+            duration: 500,
+            easing: 'ease-out-back',
+            once: true,
+            offset: 200 // Margen de scroll mayor para obligar a ver la sección completa
         });
     }
 });
 
-// ==========================================
+
 // 6. EXPANSIÓN DE NOVEDADES Y BOTÓN FLOTANTE
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const tarjetaNovedad = document.getElementById('tarjeta-novedad-expandible');
     const bloqueNovedad = document.getElementById('bloque-novedad');
@@ -235,9 +246,8 @@ function toggleNovedad() {
     }
 }
 
-// ==========================================
+
 // 7. APERTURA INFALIBLE DE MODALES (FOOTER)
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const modalPrivacidad = document.getElementById('modal-privacidad');
     const modalTerminos = document.getElementById('modal-terminos');
@@ -306,9 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ==========================================
+
 // 8. FORMULARIO DE NEWSLETTER
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const formNewsletter = document.getElementById('form-newsletter');
     const inputEmail = document.getElementById('email-newsletter');
@@ -325,4 +334,65 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+// 9. CONTROL DE ANIMACIÓN DE LA TORRE DE BAGELS
+document.addEventListener('DOMContentLoaded', () => {
+    const torre = document.getElementById('torre-bagels');
+    if (!torre) return;
+
+    // Seleccionamos la parte superior (el primer pan: Original Bagel) para activar la animación
+    const topPanOriginal = torre.querySelector('.z-30'); 
+    if (!topPanOriginal) return;
+
+    // Leemos la lista en orden normal (de arriba hacia abajo)
+    const bagels = Array.from(torre.querySelectorAll('.anim-bagel')); 
+    const textos = Array.from(torre.querySelectorAll('.anim-texto'));
+    const etiquetasMovil = Array.from(torre.querySelectorAll('.anim-etiqueta-movil'));
+
+    // Inyectar curva de impacto con fuerza (caída rápida y frenado con rebote seco)
+    const aplicarFuerzaImpacto = (el) => {
+        el.style.transitionProperty = 'all';
+        el.style.transitionDuration = '450ms'; // Caída contundente y rápida
+        el.style.transitionTimingFunction = 'cubic-bezier(0.34, 1.56, 0.64, 1)'; // Golpe seco + Rebote pesado
+    };
+
+    bagels.forEach(aplicarFuerzaImpacto);
+    textos.forEach(aplicarFuerzaImpacto);
+    etiquetasMovil.forEach(aplicarFuerzaImpacto);
+
+    const observerTorre = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                
+                bagels.forEach((bagel, index) => {
+                    setTimeout(() => {
+                        // Cae el pan de arriba hacia abajo con su efecto PUM
+                        bagel.classList.remove('opacity-0', 'translate-y-16');
+                        bagel.classList.add('opacity-100', 'translate-y-0');
+
+                        // Entra la etiqueta de texto sincronizada
+                        if (textos[index * 2]) {
+                            textos[index * 2].classList.remove('opacity-0', '-translate-x-10');
+                            textos[index * 2].classList.add('opacity-100', 'translate-x-0');
+                        }
+                        if (textos[index * 2 + 1]) {
+                            textos[index * 2 + 1].classList.remove('opacity-0', '-translate-x-10');
+                            textos[index * 2 + 1].classList.add('opacity-100', 'translate-x-0');
+                        }
+                        if (etiquetasMovil[index]) {
+                            etiquetasMovil[index].classList.remove('opacity-0', 'translate-y-6');
+                            etiquetasMovil[index].classList.add('opacity-100', 'translate-y-0');
+                        }
+                    }, index * 450); // 450ms entre cada caída
+                });
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5 // Se activa cuando la parte alta del bloque entra en la pantalla
+    });
+
+    observerTorre.observe(topPanOriginal);
 });
