@@ -33,17 +33,19 @@ const menuNavegacion = document.getElementById('menu');
 const enlacesMenu = document.querySelectorAll('.enlace-menu');
 
 if (botonMenu && menuNavegacion) {
-    // Función auxiliar para cerrar el menú de forma limpia
+    // Función centralizada para cerrar el menú
     const cerrarMenu = () => {
-        menuNavegacion.classList.add('hidden');
-        menuNavegacion.classList.remove('flex');
-        botonMenu.setAttribute('aria-expanded', 'false');
-        botonMenu.setAttribute('aria-label', 'Abrir menú');
+        if (!menuNavegacion.classList.contains('hidden')) {
+            menuNavegacion.classList.add('hidden');
+            menuNavegacion.classList.remove('flex');
+            botonMenu.setAttribute('aria-expanded', 'false');
+            botonMenu.setAttribute('aria-label', 'Abrir menú');
+        }
     };
 
-    // Toggle al hacer click en el botón hamburguesa
+    // Toggle al pulsar el botón hamburguesa
     botonMenu.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que el evento se propague inmediatamente al document
+        e.stopPropagation();
         menuNavegacion.classList.toggle('hidden');
         menuNavegacion.classList.toggle('flex');
         const menuAbierto = !menuNavegacion.classList.contains('hidden');
@@ -56,15 +58,15 @@ if (botonMenu && menuNavegacion) {
         enlace.addEventListener('click', cerrarMenu);
     });
 
-    // CIERRE AL TOCAR FUERA (Click / Tap en móvil)
+    // 1. Cierre al pulsar fuera
     document.addEventListener('click', (e) => {
-        const menuAbierto = !menuNavegacion.classList.contains('hidden');
-        
-        // Si el menú está abierto y el clic NO fue dentro del menú ni en el botón hamburguesa
-        if (menuAbierto && !menuNavegacion.contains(e.target) && !botonMenu.contains(e.target)) {
+        if (!menuNavegacion.contains(e.target) && !botonMenu.contains(e.target)) {
             cerrarMenu();
         }
     });
+
+    // 2. Cierre al hacer scroll en la pantalla
+    window.addEventListener('scroll', cerrarMenu, { passive: true });
 }
 
 
@@ -341,37 +343,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const torre = document.getElementById('torre-bagels');
     if (!torre) return;
 
-    // Seleccionamos la parte superior (el primer pan: Original Bagel) para activar la animación
-    const topPanOriginal = torre.querySelector('.z-30'); 
-    if (!topPanOriginal) return;
+    // Seleccionamos la base (Integral Bagel) para activar la animación cuando llegue la pantalla
+    const basePanIntegral = torre.querySelector('.z-5'); 
+    if (!basePanIntegral) return;
 
-    // Leemos la lista en orden normal (de arriba hacia abajo)
-    const bagels = Array.from(torre.querySelectorAll('.anim-bagel')); 
-    const textos = Array.from(torre.querySelectorAll('.anim-texto'));
-    const etiquetasMovil = Array.from(torre.querySelectorAll('.anim-etiqueta-movil'));
+    // Invertimos la lista (.reverse()) para que empiece por la base
+    const bagels = Array.from(torre.querySelectorAll('.anim-bagel')).reverse(); 
+    const textos = Array.from(torre.querySelectorAll('.anim-texto')).reverse();
+    const etiquetasMovil = Array.from(torre.querySelectorAll('.anim-etiqueta-movil')).reverse();
 
-    // Inyectar curva de impacto con fuerza (caída rápida y frenado con rebote seco)
+    // Inyectar curva de impacto con fuerza (caída rápida y rebote seco)
     const aplicarFuerzaImpacto = (el) => {
         el.style.transitionProperty = 'all';
-        el.style.transitionDuration = '450ms'; // Caída contundente y rápida
-        el.style.transitionTimingFunction = 'cubic-bezier(0.34, 1.56, 0.64, 1)'; // Golpe seco + Rebote pesado
+        el.style.transitionDuration = '450ms'; 
+        el.style.transitionTimingFunction = 'cubic-bezier(0.34, 1.56, 0.64, 1)'; // Efecto PUM / Boing
     };
 
     bagels.forEach(aplicarFuerzaImpacto);
     textos.forEach(aplicarFuerzaImpacto);
     etiquetasMovil.forEach(aplicarFuerzaImpacto);
 
-    const observerTorre = new IntersectionObserver((entries, observer) => {
+    const observerBase = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 
                 bagels.forEach((bagel, index) => {
                     setTimeout(() => {
-                        // Cae el pan de arriba hacia abajo con su efecto PUM
+                        // Aparece el pan desde abajo hacia arriba con su PUM
                         bagel.classList.remove('opacity-0', 'translate-y-16');
                         bagel.classList.add('opacity-100', 'translate-y-0');
 
-                        // Entra la etiqueta de texto sincronizada
+                        // Entran los textos/etiquetas a la vez
                         if (textos[index * 2]) {
                             textos[index * 2].classList.remove('opacity-0', '-translate-x-10');
                             textos[index * 2].classList.add('opacity-100', 'translate-x-0');
@@ -384,15 +386,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             etiquetasMovil[index].classList.remove('opacity-0', 'translate-y-6');
                             etiquetasMovil[index].classList.add('opacity-100', 'translate-y-0');
                         }
-                    }, index * 450); // 450ms entre cada caída
+                    }, index * 450); // 450ms de pausa entre pan y pan
                 });
 
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.5 // Se activa cuando la parte alta del bloque entra en la pantalla
+        threshold: 0.5 // Se activa al llegar a la base de la torre
     });
 
-    observerTorre.observe(topPanOriginal);
+    observerBase.observe(basePanIntegral);
 });
