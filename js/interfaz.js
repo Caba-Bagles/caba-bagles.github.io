@@ -194,15 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-// AOS.js configurado para que la torre esté bien centrada
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 500,
-            easing: 'ease-out-back',
-            once: true,
-            offset: 200 // Margen de scroll mayor para obligar a ver la sección completa
-        });
-    }
 });
 
 
